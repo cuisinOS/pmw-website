@@ -16,14 +16,26 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+@font-face {
+  font-family: 'Alliance No.1';
+  src: url('fonts/Degarism Studio - Alliance No.1 Light.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Degarism Studio - Alliance No.2 Light.otf') format('opentype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 body {
-font-family: 'Manrope', sans-serif;
+font-family: 'Alliance No.1', sans-serif;
 overflow-x: hidden;
 }
 .font-mono-display {
-font-family: 'Space Mono', monospace;
+font-family: 'Alliance No.2', monospace;
 }
 .reveal {
 opacity: 0;
@@ -54,7 +66,12 @@ background: #555;
 <script>
 tailwind.config = {
 theme: {
-extend: {}
+extend: {
+fontFamily: {
+sans: ["'Alliance No.1'", 'sans-serif'],
+mono: ["'Alliance No.2'", 'monospace'],
+},
+}
 },
 plugins: [
 function({ addUtilities }) {
