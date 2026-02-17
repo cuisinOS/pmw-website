@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gizlilik Politikası – PMW Global Brand Systems</title>
+<meta name="description" content="PMW Global Brand Systems gizlilik politikası. Kişisel verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu öğrenin.">
+<meta name="keywords" content="PMW, gizlilik politikası, kişisel veriler, KVKK, çerezler, veri güvenliği">
+<meta property="og:title" content="Gizlilik Politikası – PMW Global Brand Systems">
+<meta property="og:description" content="PMW Global Brand Systems gizlilik politikası. Kişisel verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu öğrenin.">
+<meta property="og:image" content="pmw-logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gizlilik Politikası – PMW Global Brand Systems">
+<meta name="twitter:description" content="PMW Global Brand Systems gizlilik politikası. Kişisel verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu öğrenin.">
+<link rel="icon" type="image/png" href="pmw-logo.png">
+<link rel="apple-touch-icon" href="pmw-logo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@font-face {
+  font-family: 'Alliance No.1';
+  src: url('fonts/Degarism Studio - Alliance No.1 Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Degarism Studio - Alliance No.2 Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+font-family: 'Alliance No.1', sans-serif;
+overflow-x: hidden;
+}
+.font-mono-display {
+font-family: 'Alliance No.2', monospace;
+}
+.reveal {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+opacity: 1;
+transform: translateY(0);
+}
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  body { cursor: auto !important; }
+  #cursor-canvas { display: none !important; }
+}
+</style>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+sans: ["'Alliance No.1'", 'sans-serif'],
+mono: ["'Alliance No.2'", 'monospace'],
+},
+}
+},
+plugins: [
+function({ addUtilities }) {
+const rotateXUtilities = {};
+const rotateYUtilities = {};
+const rotateValues = [0, 5, 10, 15, 20, 30, 45, 75];
+rotateValues.forEach((value) => {
+rotateXUtilities[`.rotate-x-${value}`] = {
+'--tw-rotate-x': `${value}deg`,
+transform: `translate3d(var(--tw-translate-x, 0), var(--tw-translate-y, 0), var(--tw-translate-z, 0)) rotateX(var(--tw-rotate-x, 0)) rotateY(var(--tw-rotate-y, 0)) rotateZ(var(--tw-rotate-z, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1))`,
+};
+});
+rotateValues.forEach((value) => {
+rotateYUtilities[`.rotate-y-${value}`] = {
+'--tw-rotate-y': `${value}deg`,
+transform: `translate3d(var(--tw-translate-x, 0), var(--tw-translate-y, 0), var(--tw-translate-z, 0)) rotateX(var(--tw-rotate-x, 0)) rotateY(var(--tw-rotate-y, 0)) rotateZ(var(--tw-rotate-z, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1))`,
+};
+});
+const perspectiveUtilities = {
+".perspective-none": { perspective: "none" },
+".perspective-dramatic": { perspective: "100px" },
+".perspective-near": { perspective: "300px" },
+".perspective-normal": { perspective: "500px" },
+".perspective-midrange": { perspective: "800px" },
+".perspective-distant": { perspective: "1200px" },
+".perspective-1000": { perspective: "1000px" },
+};
+const transformStyleUtilities = {
+".transform-style-preserve-3d": { "transform-style": "preserve-3d" },
+".transform-style-flat": { "transform-style": "flat" },
+};
+addUtilities({
+...rotateXUtilities,
+...rotateYUtilities,
+...perspectiveUtilities,
+...transformStyleUtilities,
+});
+}
+]
+};
+</script></head>
+<body class="bg-[#fdfdfc] text-neutral-900 antialiased selection:bg-neutral-900 selection:text-white cursor-none">
+
+    <canvas id="cursor-canvas" class="fixed inset-0 z-[9999] pointer-events-none"></canvas>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-4 md:px-12 md:py-6 w-full max-w-[1800px] mx-auto bg-[#fdfdfc]/80 backdrop-blur-md transition-all duration-300 border-b border-transparent" id="navbar">
+        <a href="index.html" class="cursor-pointer hover:opacity-70 transition-opacity">
+            <img src="pmw-logo.png" alt="PMW" class="h-[84px] md:h-[96px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="text-xl font-semibold tracking-tight hidden">PMW</span>
+        </a>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-neutral-600">
+            <a href="index.html#hizmetler" class="hover:text-black transition-colors" data-i18n="nav.services">Hizmetler</a>
+            <a href="projeler.html" class="hover:text-black transition-colors" data-i18n="nav.projects">Projelerimiz</a>
+            <a href="index.html#surec" class="hover:text-black transition-colors" data-i18n="nav.process">Süreçler</a>
+            <a href="index.html#iletisim" class="hover:text-black transition-colors" data-i18n="nav.contact">İletişim</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button id="lang-toggle" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-neutral-200 text-xs font-semibold text-neutral-600 hover:bg-neutral-100 transition-colors cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                <span id="lang-label">EN</span>
+            </button>
+            <a href="index.html#iletisim" class="hidden md:block px-5 py-2.5 bg-neutral-900 text-white rounded-full text-xs font-semibold hover:bg-neutral-700 hover:scale-105 transition-all duration-300 shadow-lg shadow-neutral-200/50" data-i18n="nav.cta">
+                PMW ile Tanışın
+            </a>
+            <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full border border-neutral-200 hover:bg-neutral-100 transition-colors" aria-label="Menü">
+                <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#fdfdfc]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden">
+        <a href="index.html#hizmetler" class="mobile-menu-link text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.services">Hizmetler</a>
+        <a href="projeler.html" class="text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.projects">Projelerimiz</a>
+        <a href="index.html#surec" class="mobile-menu-link text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.process">Süreçler</a>
+        <a href="index.html#iletisim" class="mobile-menu-link text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.contact">İletişim</a>
+        <button id="mobile-lang-toggle" class="flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-200 text-sm font-semibold text-neutral-600 hover:bg-neutral-100 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            <span id="mobile-lang-label">EN</span>
+        </button>
+        <a href="index.html#iletisim" class="mobile-menu-link mt-2 px-8 py-3.5 bg-neutral-900 text-white rounded-full text-sm font-semibold hover:bg-neutral-700 transition-colors" data-i18n="nav.cta">
+            PMW ile Tanışın
+        </a>
+    </div>
+
+    <main class="md:px-8 w-full max-w-[1800px] mt-24 mr-auto ml-auto pr-4 pb-20 pl-4">
+
+        <!-- Hero -->
+        <section class="pt-10 md:pt-20 pb-12 relative">
+            <div class="max-w-3xl mx-auto reveal">
+                <div class="text-xs font-semibold tracking-widest text-neutral-500 uppercase mb-4" data-i18n="privacy.label">Yasal</div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tighter leading-[1.05] mb-6" data-i18n="privacy.title">Gizlilik Politikası</h1>
+                <p class="text-neutral-500 text-base font-medium" data-i18n="privacy.updated">Son güncelleme: 1 Ocak 2026</p>
+            </div>
+        </section>
+
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent my-12 opacity-50"></div>
+
+        <!-- Privacy Content -->
+        <section class="max-w-3xl mx-auto">
+
+            <!-- 1. Genel Bilgiler -->
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="privacy.s1title">1. Genel Bilgiler</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6 text-base" data-i18n="privacy.s1p1">PMW Global Brand Systems ("PMW", "biz", "bizim") olarak, kişisel verilerinizin gizliliğine ve güvenliğine büyük önem veriyoruz. Bu gizlilik politikası, web sitemizi ziyaret ettiğinizde ve hizmetlerimizi kullandığınızda kişisel verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklamaktadır.</p>
+                <p class="text-neutral-600 leading-relaxed mb-6 text-base" data-i18n="privacy.s1p2">PMW, sunduğu hizmetleri geliştirmek ve kullanıcı deneyimini iyileştirmek amacıyla belirli verileri toplamaktadır. Toplanan tüm veriler, yürürlükteki mevzuata uygun olarak işlenmekte ve saklanmaktadır.</p>
+            </div>
+
+            <!-- 2. Toplanan Veriler -->
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="privacy.s2title">2. Toplanan Veriler</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6 text-base" data-i18n="privacy.s2p1">Web sitemiz aracılığıyla aşağıdaki kişisel verileri toplayabiliriz:</p>
+                <ul class="list-disc list-inside text-neutral-600 leading-relaxed mb-6 text-base space-y-2" data-i18n="privacy.s2list" data-i18n-html="true">
+                    <li>Ad ve soyad bilgileri</li>
+                    <li>E-posta adresi</li>
+                    <li>Şirket bilgileri</li>
+                    <li>İletişim formu aracılığıyla gönderilen mesaj içerikleri</li>
+                    <li>Çerezler aracılığıyla toplanan tarayıcı ve cihaz bilgileri</li>
+                    <li>Google Analytics gibi analiz araçları ile toplanan anonim kullanım verileri</li>
+                </ul>
+            </div>
+
+            <!-- 3. Verilerin Kullanımı -->
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="privacy.s3title">3. Verilerin Kullanımı</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6 text-base" data-i18n="privacy.s3p1">Topladığımız kişisel verileri aşağıdaki amaçlarla kullanmaktayız:</p>
+                <ul class="list-disc list-inside text-neutral-600 leading-relaxed mb-6 text-base space-y-2" data-i18n="privacy.s3list" data-i18n-html="true">
+                    <li>Taleplerinize yanıt vermek ve sizinle iletişim kurmak</li>
+                    <li>Hizmetlerimizi geliştirmek ve kişiselleştirmek</li>
+                    <li>Web sitemizin performansını analiz etmek ve iyileştirmek</li>
+                    <li>Yasal yükümlülüklerimizi yerine getirmek</li>
+                </ul>
+            </div>
+
+            <!-- 4. Çerezler -->
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="privacy.s4title">4. Çerezler</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6 text-base" data-i18n="privacy.s4p1">Web sitemiz, kullanıcı deneyimini iyileştirmek amacıyla çerezler kullanmaktadır. Kullandığımız çerez türleri şunlardır:</p>
+                <ul class="list-disc list-inside text-neutral-600 leading-relaxed mb-6 text-base space-y-2" data-i18n="privacy.s4list" data-i18n-html="true">
+                    <li><strong>Oturum Çerezleri:</strong> Web sitesinin düzgün çalışması için gerekli olan geçici çerezlerdir. Tarayıcınızı kapattığınızda otomatik olarak silinir.</li>
+                    <li><strong>Analiz Çerezleri:</strong> Ziyaretçi davranışlarını anlamamıza yardımcı olan çerezlerdir. Bu veriler anonim olarak toplanır ve istatistiksel amaçlarla kullanılır.</li>
+                </ul>
+                <p class="text-neutral-600 leading-relaxed mb-6 text-base" data-i18n="privacy.s4p2">Tarayıcı ayarlarınızdan çerezleri devre dışı bırakabilirsiniz. Ancak bu durumda web sitemizin bazı özellikleri düzgün çalışmayabilir.</p>
+            </div>
+
+            <!-- 5. Veri Güvenliği -->
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="privacy.s5title">5. Veri Güvenliği</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6 text-base" data-i18n="privacy.s5p1">Kişisel verilerinizin güvenliğini sağlamak için endüstri standardı güvenlik önlemleri uygulamaktayız. Web sitemiz SSL sertifikası ile korunmakta olup, tüm veri aktarımları şifrelenmiş bağlantılar üzerinden gerçekleştirilmektedir.</p>
+                <p class="text-neutral-600 leading-relaxed mb-6 text-base" data-i18n="privacy.s5p2">Verileriniz, güvenli sunucularda saklanmakta ve yetkisiz erişime karşı korunmaktadır. Düzenli güvenlik değerlendirmeleri yapılarak sistemlerimizin güncel tehditlere karşı dayanıklılığı sağlanmaktadır.</p>
+            </div>
+
+            <!-- 6. Üçüncü Taraflar -->
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="privacy.s6title">6. Üçüncü Taraflar</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6 text-base" data-i18n="privacy.s6p1">PMW, kişisel verilerinizi hiçbir koşulda üçüncü taraflara satmaz. Ancak hizmetlerimizi sunabilmek amacıyla, güvenilir hizmet sağlayıcılarımızla (hosting, analiz, e-posta hizmetleri gibi) sınırlı veri paylaşımı yapılabilir.</p>
+                <p class="text-neutral-600 leading-relaxed mb-6 text-base" data-i18n="privacy.s6p2">Bu hizmet sağlayıcıları, yalnızca belirtilen amaçlar doğrultusunda verilerinizi işlemeye yetkilidir ve verilerinizin güvenliğini sağlamakla yükümlüdür.</p>
+            </div>
+
+            <!-- 7. Haklarınız -->
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="privacy.s7title">7. Haklarınız</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6 text-base" data-i18n="privacy.s7p1">6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında aşağıdaki haklara sahipsiniz:</p>
+                <ul class="list-disc list-inside text-neutral-600 leading-relaxed mb-6 text-base space-y-2" data-i18n="privacy.s7list" data-i18n-html="true">
+                    <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+                    <li>Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme</li>
+                    <li>Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+                    <li>Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçüncü kişileri bilme</li>
+                    <li>Kişisel verilerinizin eksik veya yanlış işlenmiş olması halinde bunların düzeltilmesini isteme</li>
+                    <li>Kişisel verilerinizin silinmesini veya yok edilmesini isteme</li>
+                </ul>
+            </div>
+
+            <!-- 8. İletişim -->
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="privacy.s8title">8. İletişim</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6 text-base" data-i18n="privacy.s8p1">Gizlilik politikamız hakkında sorularınız veya kişisel verilerinizle ilgili talepleriniz için bizimle iletişime geçebilirsiniz:</p>
+                <div class="bg-neutral-50 rounded-2xl p-6 border border-neutral-200">
+                    <div class="flex items-center gap-3 text-neutral-700">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-neutral-400"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                        <a href="mailto:info@pmw.com" class="hover:text-black transition-colors font-medium">info@pmw.com</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="w-full h-px bg-neutral-200 my-12"></div>
+
+        <!-- Footer -->
+        <section class="mt-20 overflow-hidden border-t border-black pt-12 relative">
+            <div class="w-full overflow-hidden py-10">
+                <h1 class="text-[15vw] leading-[0.8] uppercase whitespace-nowrap select-none transition-transform duration-75 will-change-transform font-bold text-black tracking-tighter translate-x-0" style="transform: translateX(0px)" id="footer-text">PMW Global Brand Systems</h1>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-8 gap-6 pb-12 reveal">
+                <div class="flex gap-4">
+                    <a href="#" class="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center border border-neutral-200 hover:bg-black hover:text-white hover:border-black transition-all duration-300" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center border border-neutral-200 hover:bg-black hover:text-white hover:border-black transition-all duration-300" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center border border-neutral-200 hover:bg-black hover:text-white hover:border-black transition-all duration-300" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+                <div class="flex flex-wrap gap-8 text-sm font-medium text-neutral-500">
+                    <a href="gizlilik.html" class="text-black font-semibold" data-i18n="footer.privacy">Gizlilik Politikası</a>
+                    <a href="kullanim-kosullari.html" class="hover:text-black relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-all" data-i18n="footer.terms">Kullanım Koşulları</a>
+                    <a href="kariyer.html" class="hover:text-black relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-all" data-i18n="footer.careers">Kariyer</a>
+                </div>
+                <div class="text-sm font-medium text-neutral-400" data-i18n="footer.copy">© 2026 PMW. Tüm hakları saklıdır.</div>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 w-12 h-12 bg-neutral-900 text-white rounded-full flex items-center justify-center shadow-lg shadow-neutral-900/20 hover:bg-neutral-700 hover:scale-110 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+        let menuOpen = false;
+        mobileMenuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('translate-y-full', !menuOpen);
+            mobileMenu.classList.toggle('translate-y-0', menuOpen);
+            menuIconOpen.classList.toggle('hidden', menuOpen);
+            menuIconClose.classList.toggle('hidden', !menuOpen);
+        });
+        document.querySelectorAll('.mobile-menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.add('translate-y-full');
+                mobileMenu.classList.remove('translate-y-0');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            });
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        const footerText = document.getElementById('footer-text');
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            if(scrollY > 50) { navbar.classList.add('shadow-sm', 'bg-[#fdfdfc]/90'); }
+            else { navbar.classList.remove('shadow-sm', 'bg-[#fdfdfc]/90'); }
+            if (footerText) {
+                const fp = footerText.getBoundingClientRect().top;
+                if (fp < windowHeight) footerText.style.transform = `translateX(-${(windowHeight - fp) * 0.1}px)`;
+            }
+            if (scrollY > 500) { backToTop.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none'); backToTop.classList.add('opacity-100', 'translate-y-0'); }
+            else { backToTop.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none'); backToTop.classList.remove('opacity-100', 'translate-y-0'); }
+        });
+
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.reveal').forEach((el, index) => {
+                if(el.getBoundingClientRect().top < window.innerHeight) setTimeout(() => el.classList.add('active'), index * 100);
+            });
+        });
+
+        backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+        let currentLang = 'tr';
+        const translations = {
+            tr: {
+                'nav.services':'Hizmetler','nav.projects':'Projelerimiz','nav.process':'Süreçler','nav.contact':'İletişim','nav.cta':'PMW ile Tanışın',
+                'privacy.label':'Yasal','privacy.title':'Gizlilik Politikası','privacy.updated':'Son güncelleme: 1 Ocak 2026',
+                'privacy.s1title':'1. Genel Bilgiler',
+                'privacy.s1p1':'PMW Global Brand Systems ("PMW", "biz", "bizim") olarak, kişisel verilerinizin gizliliğine ve güvenliğine büyük önem veriyoruz. Bu gizlilik politikası, web sitemizi ziyaret ettiğinizde ve hizmetlerimizi kullandığınızda kişisel verilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklamaktadır.',
+                'privacy.s1p2':'PMW, sunduğu hizmetleri geliştirmek ve kullanıcı deneyimini iyileştirmek amacıyla belirli verileri toplamaktadır. Toplanan tüm veriler, yürürlükteki mevzuata uygun olarak işlenmekte ve saklanmaktadır.',
+                'privacy.s2title':'2. Toplanan Veriler',
+                'privacy.s2p1':'Web sitemiz aracılığıyla aşağıdaki kişisel verileri toplayabiliriz:',
+                'privacy.s2list':'<li>Ad ve soyad bilgileri</li><li>E-posta adresi</li><li>Şirket bilgileri</li><li>İletişim formu aracılığıyla gönderilen mesaj içerikleri</li><li>Çerezler aracılığıyla toplanan tarayıcı ve cihaz bilgileri</li><li>Google Analytics gibi analiz araçları ile toplanan anonim kullanım verileri</li>',
+                'privacy.s3title':'3. Verilerin Kullanımı',
+                'privacy.s3p1':'Topladığımız kişisel verileri aşağıdaki amaçlarla kullanmaktayız:',
+                'privacy.s3list':'<li>Taleplerinize yanıt vermek ve sizinle iletişim kurmak</li><li>Hizmetlerimizi geliştirmek ve kişiselleştirmek</li><li>Web sitemizin performansını analiz etmek ve iyileştirmek</li><li>Yasal yükümlülüklerimizi yerine getirmek</li>',
+                'privacy.s4title':'4. Çerezler',
+                'privacy.s4p1':'Web sitemiz, kullanıcı deneyimini iyileştirmek amacıyla çerezler kullanmaktadır. Kullandığımız çerez türleri şunlardır:',
+                'privacy.s4list':'<li><strong>Oturum Çerezleri:</strong> Web sitesinin düzgün çalışması için gerekli olan geçici çerezlerdir. Tarayıcınızı kapattığınızda otomatik olarak silinir.</li><li><strong>Analiz Çerezleri:</strong> Ziyaretçi davranışlarını anlamamıza yardımcı olan çerezlerdir. Bu veriler anonim olarak toplanır ve istatistiksel amaçlarla kullanılır.</li>',
+                'privacy.s4p2':'Tarayıcı ayarlarınızdan çerezleri devre dışı bırakabilirsiniz. Ancak bu durumda web sitemizin bazı özellikleri düzgün çalışmayabilir.',
+                'privacy.s5title':'5. Veri Güvenliği',
+                'privacy.s5p1':'Kişisel verilerinizin güvenliğini sağlamak için endüstri standardı güvenlik önlemleri uygulamaktayız. Web sitemiz SSL sertifikası ile korunmakta olup, tüm veri aktarımları şifrelenmiş bağlantılar üzerinden gerçekleştirilmektedir.',
+                'privacy.s5p2':'Verileriniz, güvenli sunucularda saklanmakta ve yetkisiz erişime karşı korunmaktadır. Düzenli güvenlik değerlendirmeleri yapılarak sistemlerimizin güncel tehditlere karşı dayanıklılığı sağlanmaktadır.',
+                'privacy.s6title':'6. Üçüncü Taraflar',
+                'privacy.s6p1':'PMW, kişisel verilerinizi hiçbir koşulda üçüncü taraflara satmaz. Ancak hizmetlerimizi sunabilmek amacıyla, güvenilir hizmet sağlayıcılarımızla (hosting, analiz, e-posta hizmetleri gibi) sınırlı veri paylaşımı yapılabilir.',
+                'privacy.s6p2':'Bu hizmet sağlayıcıları, yalnızca belirtilen amaçlar doğrultusunda verilerinizi işlemeye yetkilidir ve verilerinizin güvenliğini sağlamakla yükümlüdür.',
+                'privacy.s7title':'7. Haklarınız',
+                'privacy.s7p1':'6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) kapsamında aşağıdaki haklara sahipsiniz:',
+                'privacy.s7list':'<li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li><li>Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme</li><li>Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme</li><li>Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçüncü kişileri bilme</li><li>Kişisel verilerinizin eksik veya yanlış işlenmiş olması halinde bunların düzeltilmesini isteme</li><li>Kişisel verilerinizin silinmesini veya yok edilmesini isteme</li>',
+                'privacy.s8title':'8. İletişim',
+                'privacy.s8p1':'Gizlilik politikamız hakkında sorularınız veya kişisel verilerinizle ilgili talepleriniz için bizimle iletişime geçebilirsiniz:',
+                'footer.privacy':'Gizlilik Politikası','footer.terms':'Kullanım Koşulları','footer.careers':'Kariyer','footer.copy':'© 2026 PMW. Tüm hakları saklıdır.'
+            },
+            en: {
+                'nav.services':'Services','nav.projects':'Projects','nav.process':'Process','nav.contact':'Contact','nav.cta':'Meet PMW',
+                'privacy.label':'Legal','privacy.title':'Privacy Policy','privacy.updated':'Last updated: January 1, 2026',
+                'privacy.s1title':'1. General Information',
+                'privacy.s1p1':'At PMW Global Brand Systems ("PMW", "we", "our"), we place great importance on the privacy and security of your personal data. This privacy policy explains how your personal data is collected, used, and protected when you visit our website and use our services.',
+                'privacy.s1p2':'PMW collects certain data to improve its services and enhance user experience. All collected data is processed and stored in accordance with applicable legislation.',
+                'privacy.s2title':'2. Data Collected',
+                'privacy.s2p1':'We may collect the following personal data through our website:',
+                'privacy.s2list':'<li>Name and surname</li><li>Email address</li><li>Company information</li><li>Message content sent through the contact form</li><li>Browser and device information collected through cookies</li><li>Anonymous usage data collected through analytics tools such as Google Analytics</li>',
+                'privacy.s3title':'3. Use of Data',
+                'privacy.s3p1':'We use the personal data we collect for the following purposes:',
+                'privacy.s3list':'<li>Responding to your requests and communicating with you</li><li>Improving and personalizing our services</li><li>Analyzing and improving our website performance</li><li>Fulfilling our legal obligations</li>',
+                'privacy.s4title':'4. Cookies',
+                'privacy.s4p1':'Our website uses cookies to improve user experience. The types of cookies we use are as follows:',
+                'privacy.s4list':'<li><strong>Session Cookies:</strong> Temporary cookies required for the proper functioning of the website. They are automatically deleted when you close your browser.</li><li><strong>Analytics Cookies:</strong> Cookies that help us understand visitor behavior. This data is collected anonymously and used for statistical purposes.</li>',
+                'privacy.s4p2':'You can disable cookies through your browser settings. However, some features of our website may not function properly in this case.',
+                'privacy.s5title':'5. Data Security',
+                'privacy.s5p1':'We implement industry-standard security measures to ensure the safety of your personal data. Our website is protected with an SSL certificate, and all data transfers are carried out over encrypted connections.',
+                'privacy.s5p2':'Your data is stored on secure servers and protected against unauthorized access. Regular security assessments are conducted to ensure our systems are resilient against current threats.',
+                'privacy.s6title':'6. Third Parties',
+                'privacy.s6p1':'PMW does not sell your personal data to third parties under any circumstances. However, limited data sharing may occur with our trusted service providers (such as hosting, analytics, and email services) in order to deliver our services.',
+                'privacy.s6p2':'These service providers are authorized to process your data only for the specified purposes and are obligated to ensure the security of your data.',
+                'privacy.s7title':'7. Your Rights',
+                'privacy.s7p1':'Under the Personal Data Protection Law (KVKK) No. 6698, you have the following rights:',
+                'privacy.s7list':'<li>Learning whether your personal data is being processed</li><li>Requesting information if your personal data has been processed</li><li>Learning the purpose of processing your personal data and whether it is used in accordance with its purpose</li><li>Knowing the third parties to whom your personal data is transferred domestically or abroad</li><li>Requesting correction if your personal data has been processed incompletely or inaccurately</li><li>Requesting deletion or destruction of your personal data</li>',
+                'privacy.s8title':'8. Contact',
+                'privacy.s8p1':'For questions about our privacy policy or requests regarding your personal data, you can contact us:',
+                'footer.privacy':'Privacy Policy','footer.terms':'Terms of Use','footer.careers':'Careers','footer.copy':'© 2026 PMW. All rights reserved.'
+            }
+        };
+        function setLanguage(lang) {
+            currentLang = lang; document.documentElement.lang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const val = translations[lang]?.[key];
+                if (!val) return;
+                /* innerHTML is used here ONLY for static, trusted translation strings defined above -- no user input is ever rendered */
+                if (el.getAttribute('data-i18n-html') === 'true') { el.innerHTML = val; } else { el.textContent = val; }
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const key = el.getAttribute('data-i18n-placeholder'); const val = translations[lang]?.[key]; if (val) el.placeholder = val; });
+            const label = lang === 'tr' ? 'EN' : 'TR';
+            const langLabel = document.getElementById('lang-label'); const mobileLangLabel = document.getElementById('mobile-lang-label');
+            if (langLabel) langLabel.textContent = label; if (mobileLangLabel) mobileLangLabel.textContent = label;
+        }
+        document.getElementById('lang-toggle')?.addEventListener('click', () => { setLanguage(currentLang === 'tr' ? 'en' : 'tr'); });
+        document.getElementById('mobile-lang-toggle')?.addEventListener('click', () => { setLanguage(currentLang === 'tr' ? 'en' : 'tr'); });
+
+        (function() {
+            const hasHover = window.matchMedia('(hover: hover)').matches;
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const cursorCanvas = document.getElementById('cursor-canvas');
+            if (!hasHover || prefersReducedMotion) { cursorCanvas.style.display = 'none'; document.body.style.cursor = 'auto'; return; }
+            const cursorCtx = cursorCanvas.getContext('2d'); let cursorMoved = false;
+            const cursorPointer = { x: .5 * window.innerWidth, y: .5 * window.innerHeight };
+            const cursorParams = { pointsNumber: 40, widthFactor: .3, spring: .4, friction: .5 };
+            const cursorTrail = new Array(cursorParams.pointsNumber);
+            for (let i = 0; i < cursorParams.pointsNumber; i++) cursorTrail[i] = { x: cursorPointer.x, y: cursorPointer.y, dx: 0, dy: 0 };
+            function updateCursorPos(eX, eY) { cursorPointer.x = eX; cursorPointer.y = eY; }
+            window.addEventListener('mousemove', e => { cursorMoved = true; updateCursorPos(e.clientX, e.clientY); });
+            window.addEventListener('click', e => { updateCursorPos(e.clientX, e.clientY); });
+            window.addEventListener('touchmove', e => { cursorMoved = true; updateCursorPos(e.targetTouches[0].clientX, e.targetTouches[0].clientY); });
+            function setupCursorCanvas() { cursorCanvas.width = window.innerWidth; cursorCanvas.height = window.innerHeight; }
+            function cursorUpdate(t) {
+                if (!cursorMoved) { cursorPointer.x = (.5 + .3 * Math.cos(.002 * t) * Math.sin(.005 * t)) * window.innerWidth; cursorPointer.y = (.5 + .2 * Math.cos(.005 * t) + .1 * Math.cos(.01 * t)) * window.innerHeight; }
+                cursorCtx.clearRect(0, 0, cursorCanvas.width, cursorCanvas.height);
+                cursorTrail.forEach((p, pIdx) => { const prev = pIdx === 0 ? cursorPointer : cursorTrail[pIdx - 1]; const spring = pIdx === 0 ? .4 * cursorParams.spring : cursorParams.spring; p.dx += (prev.x - p.x) * spring; p.dy += (prev.y - p.y) * spring; p.dx *= cursorParams.friction; p.dy *= cursorParams.friction; p.x += p.dx; p.y += p.dy; });
+                cursorCtx.lineCap = 'round'; cursorCtx.strokeStyle = '#111111'; cursorCtx.beginPath(); cursorCtx.moveTo(cursorTrail[0].x, cursorTrail[0].y);
+                for (let i = 1; i < cursorTrail.length - 1; i++) { const xc = .5 * (cursorTrail[i].x + cursorTrail[i + 1].x); const yc = .5 * (cursorTrail[i].y + cursorTrail[i + 1].y); cursorCtx.quadraticCurveTo(cursorTrail[i].x, cursorTrail[i].y, xc, yc); cursorCtx.lineWidth = cursorParams.widthFactor * (cursorParams.pointsNumber - i); cursorCtx.stroke(); }
+                cursorCtx.lineTo(cursorTrail[cursorTrail.length - 1].x, cursorTrail[cursorTrail.length - 1].y); cursorCtx.stroke();
+                window.requestAnimationFrame(cursorUpdate);
+            }
+            setupCursorCanvas(); cursorUpdate(0); window.addEventListener('resize', setupCursorCanvas);
+        })();
+    </script>
+</body></html>

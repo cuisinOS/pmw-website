@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMW – Kullanim Kosullari</title>
+<meta name="description" content="PMW Global Brand Systems – Kullanim Kosullari ve sartlar.">
+<meta property="og:title" content="PMW – Kullanim Kosullari">
+<meta property="og:description" content="PMW Global Brand Systems kullanim kosullari.">
+<meta property="og:image" content="pmw-logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<link rel="icon" type="image/png" href="pmw-logo.png">
+<link rel="apple-touch-icon" href="pmw-logo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@font-face {
+  font-family: 'Alliance No.1';
+  src: url('fonts/Degarism Studio - Alliance No.1 Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Degarism Studio - Alliance No.2 Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+font-family: 'Alliance No.1', sans-serif;
+overflow-x: hidden;
+}
+.font-mono-display {
+font-family: 'Alliance No.2', monospace;
+}
+.reveal {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+opacity: 1;
+transform: translateY(0);
+}
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  body { cursor: auto !important; }
+  #cursor-canvas { display: none !important; }
+}
+</style>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+sans: ["'Alliance No.1'", 'sans-serif'],
+mono: ["'Alliance No.2'", 'monospace'],
+},
+}
+},
+plugins: [
+function({ addUtilities }) {
+const rotateXUtilities = {};
+const rotateYUtilities = {};
+const rotateValues = [0, 5, 10, 15, 20, 30, 45, 75];
+rotateValues.forEach((value) => {
+rotateXUtilities[`.rotate-x-${value}`] = {
+'--tw-rotate-x': `${value}deg`,
+transform: `translate3d(var(--tw-translate-x, 0), var(--tw-translate-y, 0), var(--tw-translate-z, 0)) rotateX(var(--tw-rotate-x, 0)) rotateY(var(--tw-rotate-y, 0)) rotateZ(var(--tw-rotate-z, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1))`,
+};
+});
+rotateValues.forEach((value) => {
+rotateYUtilities[`.rotate-y-${value}`] = {
+'--tw-rotate-y': `${value}deg`,
+transform: `translate3d(var(--tw-translate-x, 0), var(--tw-translate-y, 0), var(--tw-translate-z, 0)) rotateX(var(--tw-rotate-x, 0)) rotateY(var(--tw-rotate-y, 0)) rotateZ(var(--tw-rotate-z, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1))`,
+};
+});
+const perspectiveUtilities = {
+".perspective-none": { perspective: "none" },
+".perspective-dramatic": { perspective: "100px" },
+".perspective-near": { perspective: "300px" },
+".perspective-normal": { perspective: "500px" },
+".perspective-midrange": { perspective: "800px" },
+".perspective-distant": { perspective: "1200px" },
+".perspective-1000": { perspective: "1000px" },
+};
+const transformStyleUtilities = {
+".transform-style-preserve-3d": { "transform-style": "preserve-3d" },
+".transform-style-flat": { "transform-style": "flat" },
+};
+addUtilities({
+...rotateXUtilities,
+...rotateYUtilities,
+...perspectiveUtilities,
+...transformStyleUtilities,
+});
+}
+]
+};
+</script></head>
+<body class="bg-[#fdfdfc] text-neutral-900 antialiased selection:bg-neutral-900 selection:text-white cursor-none">
+
+    <canvas id="cursor-canvas" class="fixed inset-0 z-[9999] pointer-events-none"></canvas>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-4 md:px-12 md:py-6 w-full max-w-[1800px] mx-auto bg-[#fdfdfc]/80 backdrop-blur-md transition-all duration-300 border-b border-transparent" id="navbar">
+        <a href="index.html" class="cursor-pointer hover:opacity-70 transition-opacity">
+            <img src="pmw-logo.png" alt="PMW" class="h-[84px] md:h-[96px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="text-xl font-semibold tracking-tight hidden">PMW</span>
+        </a>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-neutral-600">
+            <a href="index.html#hizmetler" class="hover:text-black transition-colors" data-i18n="nav.services">Hizmetler</a>
+            <a href="projeler.html" class="hover:text-black transition-colors" data-i18n="nav.projects">Projelerimiz</a>
+            <a href="index.html#surec" class="hover:text-black transition-colors" data-i18n="nav.process">Surecler</a>
+            <a href="index.html#iletisim" class="hover:text-black transition-colors" data-i18n="nav.contact">Iletisim</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button id="lang-toggle" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-neutral-200 text-xs font-semibold text-neutral-600 hover:bg-neutral-100 transition-colors cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                <span id="lang-label">EN</span>
+            </button>
+            <a href="index.html#iletisim" class="hidden md:block px-5 py-2.5 bg-neutral-900 text-white rounded-full text-xs font-semibold hover:bg-neutral-700 hover:scale-105 transition-all duration-300 shadow-lg shadow-neutral-200/50" data-i18n="nav.cta">
+                PMW ile Tanisin
+            </a>
+            <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full border border-neutral-200 hover:bg-neutral-100 transition-colors" aria-label="Menu">
+                <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#fdfdfc]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden">
+        <a href="index.html#hizmetler" class="mobile-menu-link text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.services">Hizmetler</a>
+        <a href="projeler.html" class="text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.projects">Projelerimiz</a>
+        <a href="index.html#surec" class="mobile-menu-link text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.process">Surecler</a>
+        <a href="index.html#iletisim" class="mobile-menu-link text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.contact">Iletisim</a>
+        <button id="mobile-lang-toggle" class="flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-200 text-sm font-semibold text-neutral-600 hover:bg-neutral-100 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            <span id="mobile-lang-label">EN</span>
+        </button>
+        <a href="index.html#iletisim" class="mobile-menu-link mt-2 px-8 py-3.5 bg-neutral-900 text-white rounded-full text-sm font-semibold hover:bg-neutral-700 transition-colors" data-i18n="nav.cta">
+            PMW ile Tanisin
+        </a>
+    </div>
+
+    <main class="md:px-8 w-full max-w-[1800px] mt-24 mr-auto ml-auto pr-4 pb-20 pl-4">
+
+        <section class="pt-10 md:pt-20 pb-12 relative">
+            <div class="max-w-3xl mx-auto reveal">
+                <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-[1.05] mb-6" data-i18n="terms.hero">Kullanim Kosullari</h1>
+                <p class="text-neutral-500 text-sm font-medium" data-i18n="terms.updated">Son guncelleme: 1 Ocak 2026</p>
+            </div>
+        </section>
+
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent my-12 opacity-50"></div>
+
+        <section class="max-w-3xl mx-auto">
+
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="terms.s1title">1. Kabul</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s1p1">Bu web sitesini kullanarak, asagida belirtilen kullanim kosullarini kabul etmis sayilirsiniz. Bu kosullari kabul etmiyorsaniz, lutfen siteyi kullanmayiniz.</p>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s1p2">PMW Global Brand Systems ("PMW"), bu kosullari onceden bildirimde bulunmaksizin degistirme hakkini sakli tutar. Guncel kosullari duzenli olarak incelemeniz onemle tavsiye edilir.</p>
+            </div>
+
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="terms.s2title">2. Hizmet Tanimi</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s2p1">PMW; marka cozumleri, lisansli urun yonetimi, kurumsal merchandising, perakende deneyimi tasarimi ve dijital marka hizmetleri sunan entegre bir is ortagi olarak faaliyet gostermektedir.</p>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s2p2">Web sitemiz araciligiyla sunulan bilgiler, hizmetlerimiz hakkinda genel bilgilendirme amaci tasimaktadir ve sozlesme niteliginde degildir. Detayli hizmet kapsamlari, projeler ozelinde ayrica belirlenir.</p>
+            </div>
+
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="terms.s3title">3. Fikri Mulkiyet</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s3p1">Bu web sitesinde yer alan tum icerikler — metinler, gorseller, logolar, tasarimlar, grafikler, yazilim ve diger materyaller — PMW Global Brand Systems'a aittir veya lisans altinda kullanilmaktadir.</p>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s3p2">Bu iceriklerin PMW'nin onceden yazili izni olmaksizin kopyalanmasi, cogaltilmasi, dagitilmasi, yayinlanmasi, degistirilmesi veya ticari amacla kullanilmasi kesinlikle yasaktir.</p>
+            </div>
+
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="terms.s4title">4. Kullanici Sorumluluklari</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s4p1">Kullanicilar, siteyi yalnizca yasal amaclarla ve bu kosullara uygun sekilde kullanmayi kabul eder. Iletisim formlari araciligiyla gonderilen bilgilerin dogrulugu kullanicinin sorumlulugundadir.</p>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s4p2">Siteye yetkisiz erisim girisimleri, otomatik veri toplama, zararli yazilim yukleme, siteyi yaniltici veya hileli amaclarla kullanma ve ucuncu taraflarin haklarini ihlal eden her turlu faaliyet kesinlikle yasaktir.</p>
+            </div>
+
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="terms.s5title">5. Sorumluluk Siniri</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s5p1">PMW, web sitesinin kesintisiz veya hatasiz calisacagini garanti etmez. Site icerigindeki bilgiler "oldugu gibi" sunulmaktadir.</p>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s5p2">PMW, sitenin kullanimindan kaynaklanabilecek dogrudan, dolayli, ozel, arizi veya sonuc olarak ortaya cikan hicbir zarar veya kayiptan sorumlu tutulamaz. Bu sinirlandirma, yasal olarak izin verilen azami olcude gecerlidir.</p>
+            </div>
+
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="terms.s6title">6. Degisiklikler</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s6p1">PMW, bu kullanim kosullarini herhangi bir zamanda, onceden bildirimde bulunmaksizin degistirme, guncelleme veya yenileme hakkini sakli tutar.</p>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s6p2">Degisiklikler, web sitesinde yayinlandigi andan itibaren yururluge girer. Siteyi kullanmaya devam etmeniz, guncellenmis kosullari kabul ettiginiz anlamina gelir.</p>
+            </div>
+
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="terms.s7title">7. Uygulanacak Hukuk</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s7p1">Bu kullanim kosullari, Turkiye Cumhuriyeti kanunlarina tabidir ve bunlara gore yorumlanir.</p>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s7p2">Bu kosullardan dogan veya bunlarla ilgili her turlu uyusmazlik, Istanbul Mahkemeleri ve Icra Daireleri'nin munhasir yargi yetkisine tabidir.</p>
+            </div>
+
+            <div class="mb-12 reveal">
+                <h2 class="text-2xl font-semibold tracking-tight mb-4" data-i18n="terms.s8title">8. Iletisim</h2>
+                <p class="text-neutral-600 leading-relaxed mb-6" data-i18n="terms.s8p1">Bu kullanim kosullari hakkinda herhangi bir sorunuz veya talebiniz varsa, asagidaki iletisim adresi uzerinden bizimle iletisime gecebilirsiniz:</p>
+                <p class="text-neutral-600 leading-relaxed mb-6">
+                    <a href="mailto:info@pmw.com" class="text-neutral-900 font-semibold hover:underline transition-colors">info@pmw.com</a>
+                </p>
+            </div>
+
+        </section>
+
+        <div class="w-full h-px bg-neutral-200 my-12"></div>
+
+        <section class="mt-20 overflow-hidden border-t border-black pt-12 relative">
+            <div class="w-full overflow-hidden py-10">
+                <h1 class="text-[15vw] leading-[0.8] uppercase whitespace-nowrap select-none transition-transform duration-75 will-change-transform font-bold text-black tracking-tighter translate-x-0" style="transform: translateX(0px)" id="footer-text">PMW Global Brand Systems</h1>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-8 gap-6 pb-12 reveal">
+                <div class="flex gap-4">
+                    <a href="#" class="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center border border-neutral-200 hover:bg-black hover:text-white hover:border-black transition-all duration-300" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center border border-neutral-200 hover:bg-black hover:text-white hover:border-black transition-all duration-300" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center border border-neutral-200 hover:bg-black hover:text-white hover:border-black transition-all duration-300" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+                <div class="flex flex-wrap gap-8 text-sm font-medium text-neutral-500">
+                    <a href="gizlilik.html" class="hover:text-black relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-all" data-i18n="footer.privacy">Gizlilik Politikasi</a>
+                    <span class="text-black font-semibold" data-i18n="footer.terms">Kullanim Kosullari</span>
+                    <a href="kariyer.html" class="hover:text-black relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-all" data-i18n="footer.careers">Kariyer</a>
+                </div>
+                <div class="text-sm font-medium text-neutral-400" data-i18n="footer.copy">&copy; 2026 PMW. Tum haklari saklidir.</div>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 w-12 h-12 bg-neutral-900 text-white rounded-full flex items-center justify-center shadow-lg shadow-neutral-900/20 hover:bg-neutral-700 hover:scale-110 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+        let menuOpen = false;
+        mobileMenuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('translate-y-full', !menuOpen);
+            mobileMenu.classList.toggle('translate-y-0', menuOpen);
+            menuIconOpen.classList.toggle('hidden', menuOpen);
+            menuIconClose.classList.toggle('hidden', !menuOpen);
+        });
+        document.querySelectorAll('.mobile-menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.add('translate-y-full');
+                mobileMenu.classList.remove('translate-y-0');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            });
+        });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        const footerText = document.getElementById('footer-text');
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            if(scrollY > 50) { navbar.classList.add('shadow-sm', 'bg-[#fdfdfc]/90'); }
+            else { navbar.classList.remove('shadow-sm', 'bg-[#fdfdfc]/90'); }
+            if (footerText) {
+                const fp = footerText.getBoundingClientRect().top;
+                if (fp < windowHeight) footerText.style.transform = `translateX(-${(windowHeight - fp) * 0.1}px)`;
+            }
+            if (scrollY > 500) { backToTop.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none'); backToTop.classList.add('opacity-100', 'translate-y-0'); }
+            else { backToTop.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none'); backToTop.classList.remove('opacity-100', 'translate-y-0'); }
+        });
+
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.reveal').forEach((el, index) => {
+                if(el.getBoundingClientRect().top < window.innerHeight) setTimeout(() => el.classList.add('active'), index * 100);
+            });
+        });
+
+        backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+        let currentLang = 'tr';
+        const translations = {
+            tr: {
+                'nav.services': 'Hizmetler',
+                'nav.projects': 'Projelerimiz',
+                'nav.process': 'S\u00fcre\u00e7ler',
+                'nav.contact': '\u0130leti\u015fim',
+                'nav.cta': 'PMW ile Tan\u0131\u015f\u0131n',
+                'footer.privacy': 'Gizlilik Politikas\u0131',
+                'footer.terms': 'Kullan\u0131m Ko\u015fullar\u0131',
+                'footer.careers': 'Kariyer',
+                'footer.copy': '\u00a9 2026 PMW. T\u00fcm haklar\u0131 sakl\u0131d\u0131r.',
+                'terms.hero': 'Kullan\u0131m Ko\u015fullar\u0131',
+                'terms.updated': 'Son g\u00fcncelleme: 1 Ocak 2026',
+                'terms.s1title': '1. Kabul',
+                'terms.s1p1': 'Bu web sitesini kullanarak, a\u015fa\u011f\u0131da belirtilen kullan\u0131m ko\u015fullar\u0131n\u0131 kabul etmi\u015f say\u0131l\u0131rs\u0131n\u0131z. Bu ko\u015fullar\u0131 kabul etmiyorsan\u0131z, l\u00fctfen siteyi kullanmay\u0131n\u0131z.',
+                'terms.s1p2': 'PMW Global Brand Systems (\u201cPMW\u201d), bu ko\u015fullar\u0131 \u00f6nceden bildirimde bulunmaks\u0131z\u0131n de\u011fi\u015ftirme hakk\u0131n\u0131 sakl\u0131 tutar. G\u00fcncel ko\u015fullar\u0131 d\u00fczenli olarak incelemeniz \u00f6nemle tavsiye edilir.',
+                'terms.s2title': '2. Hizmet Tan\u0131m\u0131',
+                'terms.s2p1': 'PMW; marka \u00e7\u00f6z\u00fcmleri, lisansl\u0131 \u00fcr\u00fcn y\u00f6netimi, kurumsal merchandising, perakende deneyimi tasar\u0131m\u0131 ve dijital marka hizmetleri sunan entegre bir i\u015f orta\u011f\u0131 olarak faaliyet g\u00f6stermektedir.',
+                'terms.s2p2': 'Web sitemiz arac\u0131l\u0131\u011f\u0131yla sunulan bilgiler, hizmetlerimiz hakk\u0131nda genel bilgilendirme amac\u0131 ta\u015f\u0131maktad\u0131r ve s\u00f6zle\u015fme niteli\u011finde de\u011fildir. Detayl\u0131 hizmet kapsamlar\u0131, projeler \u00f6zelinde ayr\u0131ca belirlenir.',
+                'terms.s3title': '3. Fikri M\u00fclkiyet',
+                'terms.s3p1': 'Bu web sitesinde yer alan t\u00fcm i\u00e7erikler \u2014 metinler, g\u00f6rseller, logolar, tasar\u0131mlar, grafikler, yaz\u0131l\u0131m ve di\u011fer materyaller \u2014 PMW Global Brand Systems\u2019a aittir veya lisans alt\u0131nda kullan\u0131lmaktad\u0131r.',
+                'terms.s3p2': 'Bu i\u00e7eriklerin PMW\u2019nin \u00f6nceden yaz\u0131l\u0131 izni olmaks\u0131z\u0131n kopyalanmas\u0131, \u00e7o\u011falt\u0131lmas\u0131, da\u011f\u0131t\u0131lmas\u0131, yay\u0131nlanmas\u0131, de\u011fi\u015ftirilmesi veya ticari ama\u00e7la kullan\u0131lmas\u0131 kesinlikle yasakt\u0131r.',
+                'terms.s4title': '4. Kullan\u0131c\u0131 Sorumluluklar\u0131',
+                'terms.s4p1': 'Kullan\u0131c\u0131lar, siteyi yaln\u0131zca yasal ama\u00e7larla ve bu ko\u015fullara uygun \u015fekilde kullanmay\u0131 kabul eder. \u0130leti\u015fim formlar\u0131 arac\u0131l\u0131\u011f\u0131yla g\u00f6nderilen bilgilerin do\u011frulu\u011fu kullan\u0131c\u0131n\u0131n sorumlulu\u011fundad\u0131r.',
+                'terms.s4p2': 'Siteye yetkisiz eri\u015fim giri\u015fimleri, otomatik veri toplama, zararl\u0131 yaz\u0131l\u0131m y\u00fckleme, siteyi yan\u0131lt\u0131c\u0131 veya hileli ama\u00e7larla kullanma ve \u00fc\u00e7\u00fcnc\u00fc taraflar\u0131n haklar\u0131n\u0131 ihlal eden her t\u00fcrl\u00fc faaliyet kesinlikle yasakt\u0131r.',
+                'terms.s5title': '5. Sorumluluk S\u0131n\u0131r\u0131',
+                'terms.s5p1': 'PMW, web sitesinin kesintisiz veya hatas\u0131z \u00e7al\u0131\u015faca\u011f\u0131n\u0131 garanti etmez. Site i\u00e7eri\u011findeki bilgiler \u201coldu\u011fu gibi\u201d sunulmaktad\u0131r.',
+                'terms.s5p2': 'PMW, sitenin kullan\u0131m\u0131ndan kaynaklanabilecek do\u011frudan, dolayl\u0131, \u00f6zel, ar\u0131zi veya sonu\u00e7 olarak ortaya \u00e7\u0131kan hi\u00e7bir zarar veya kay\u0131ptan sorumlu tutulamaz. Bu s\u0131n\u0131rland\u0131rma, yasal olarak izin verilen azami \u00f6l\u00e7\u00fcde ge\u00e7erlidir.',
+                'terms.s6title': '6. De\u011fi\u015fiklikler',
+                'terms.s6p1': 'PMW, bu kullan\u0131m ko\u015fullar\u0131n\u0131 herhangi bir zamanda, \u00f6nceden bildirimde bulunmaks\u0131z\u0131n de\u011fi\u015ftirme, g\u00fcncelleme veya yenileme hakk\u0131n\u0131 sakl\u0131 tutar.',
+                'terms.s6p2': 'De\u011fi\u015fiklikler, web sitesinde yay\u0131nland\u0131\u011f\u0131 andan itibaren y\u00fcr\u00fcrl\u00fc\u011fe girer. Siteyi kullanmaya devam etmeniz, g\u00fcncellenmi\u015f ko\u015fullar\u0131 kabul etti\u011finiz anlam\u0131na gelir.',
+                'terms.s7title': '7. Uygulanacak Hukuk',
+                'terms.s7p1': 'Bu kullan\u0131m ko\u015fullar\u0131, T\u00fcrkiye Cumhuriyeti kanunlar\u0131na tabidir ve bunlara g\u00f6re yorumlan\u0131r.',
+                'terms.s7p2': 'Bu ko\u015fullardan do\u011fan veya bunlarla ilgili her t\u00fcrl\u00fc uyu\u015fmazl\u0131k, \u0130stanbul Mahkemeleri ve \u0130cra Daireleri\u2019nin m\u00fcnhas\u0131r yarg\u0131 yetkisine tabidir.',
+                'terms.s8title': '8. \u0130leti\u015fim',
+                'terms.s8p1': 'Bu kullan\u0131m ko\u015fullar\u0131 hakk\u0131nda herhangi bir sorunuz veya talebiniz varsa, a\u015fa\u011f\u0131daki ileti\u015fim adresi \u00fczerinden bizimle ileti\u015fime ge\u00e7ebilirsiniz:'
+            },
+            en: {
+                'nav.services': 'Services',
+                'nav.projects': 'Projects',
+                'nav.process': 'Process',
+                'nav.contact': 'Contact',
+                'nav.cta': 'Meet PMW',
+                'footer.privacy': 'Privacy Policy',
+                'footer.terms': 'Terms of Use',
+                'footer.careers': 'Careers',
+                'footer.copy': '\u00a9 2026 PMW. All rights reserved.',
+                'terms.hero': 'Terms of Use',
+                'terms.updated': 'Last updated: January 1, 2026',
+                'terms.s1title': '1. Acceptance',
+                'terms.s1p1': 'By using this website, you are deemed to have accepted the terms of use set out below. If you do not accept these terms, please do not use the site.',
+                'terms.s1p2': 'PMW Global Brand Systems (\u201cPMW\u201d) reserves the right to change these terms without prior notice. You are strongly advised to review the current terms on a regular basis.',
+                'terms.s2title': '2. Service Description',
+                'terms.s2p1': 'PMW operates as an integrated business partner offering brand solutions, licensed product management, corporate merchandising, retail experience design and digital brand services.',
+                'terms.s2p2': 'The information provided through our website is intended for general informational purposes about our services and does not constitute a contract. Detailed service scopes are determined separately on a project-by-project basis.',
+                'terms.s3title': '3. Intellectual Property',
+                'terms.s3p1': 'All content on this website \u2014 texts, images, logos, designs, graphics, software and other materials \u2014 is owned by or licensed to PMW Global Brand Systems.',
+                'terms.s3p2': 'Copying, reproducing, distributing, publishing, modifying or using this content for commercial purposes without the prior written permission of PMW is strictly prohibited.',
+                'terms.s4title': '4. User Responsibilities',
+                'terms.s4p1': 'Users agree to use the site only for lawful purposes and in accordance with these terms. The accuracy of information submitted through contact forms is the responsibility of the user.',
+                'terms.s4p2': 'Unauthorized access attempts, automated data collection, uploading malicious software, using the site for misleading or fraudulent purposes, and any activity that infringes the rights of third parties are strictly prohibited.',
+                'terms.s5title': '5. Limitation of Liability',
+                'terms.s5p1': 'PMW does not guarantee that the website will operate without interruption or error. Information on the site is provided \u201cas is\u201d.',
+                'terms.s5p2': 'PMW shall not be held liable for any direct, indirect, special, incidental or consequential damages or losses arising from the use of the site. This limitation applies to the maximum extent permitted by law.',
+                'terms.s6title': '6. Changes',
+                'terms.s6p1': 'PMW reserves the right to change, update or revise these terms of use at any time without prior notice.',
+                'terms.s6p2': 'Changes take effect from the moment they are published on the website. Your continued use of the site constitutes acceptance of the updated terms.',
+                'terms.s7title': '7. Governing Law',
+                'terms.s7p1': 'These terms of use are governed by and construed in accordance with the laws of the Republic of Turkey.',
+                'terms.s7p2': 'Any disputes arising from or in connection with these terms shall be subject to the exclusive jurisdiction of the Istanbul Courts and Enforcement Offices.',
+                'terms.s8title': '8. Contact',
+                'terms.s8p1': 'If you have any questions or requests regarding these terms of use, you can contact us at the following address:'
+            }
+        };
+        function setLanguage(lang) {
+            currentLang = lang; document.documentElement.lang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const val = translations[lang]?.[key];
+                if (!val) return;
+                if (el.getAttribute('data-i18n-html') === 'true') {
+                    el.innerHTML = val;
+                } else {
+                    el.textContent = val;
+                }
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const key = el.getAttribute('data-i18n-placeholder'); const val = translations[lang]?.[key]; if (val) el.placeholder = val; });
+            const label = lang === 'tr' ? 'EN' : 'TR';
+            const langLabel = document.getElementById('lang-label'); const mobileLangLabel = document.getElementById('mobile-lang-label');
+            if (langLabel) langLabel.textContent = label; if (mobileLangLabel) mobileLangLabel.textContent = label;
+        }
+        document.getElementById('lang-toggle')?.addEventListener('click', () => { setLanguage(currentLang === 'tr' ? 'en' : 'tr'); });
+        document.getElementById('mobile-lang-toggle')?.addEventListener('click', () => { setLanguage(currentLang === 'tr' ? 'en' : 'tr'); });
+
+        (function() {
+            const hasHover = window.matchMedia('(hover: hover)').matches;
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const cursorCanvas = document.getElementById('cursor-canvas');
+            if (!hasHover || prefersReducedMotion) { cursorCanvas.style.display = 'none'; document.body.style.cursor = 'auto'; return; }
+            const cursorCtx = cursorCanvas.getContext('2d'); let cursorMoved = false;
+            const cursorPointer = { x: .5 * window.innerWidth, y: .5 * window.innerHeight };
+            const cursorParams = { pointsNumber: 40, widthFactor: .3, spring: .4, friction: .5 };
+            const cursorTrail = new Array(cursorParams.pointsNumber);
+            for (let i = 0; i < cursorParams.pointsNumber; i++) cursorTrail[i] = { x: cursorPointer.x, y: cursorPointer.y, dx: 0, dy: 0 };
+            function updateCursorPos(eX, eY) { cursorPointer.x = eX; cursorPointer.y = eY; }
+            window.addEventListener('mousemove', e => { cursorMoved = true; updateCursorPos(e.clientX, e.clientY); });
+            window.addEventListener('click', e => { updateCursorPos(e.clientX, e.clientY); });
+            window.addEventListener('touchmove', e => { cursorMoved = true; updateCursorPos(e.targetTouches[0].clientX, e.targetTouches[0].clientY); });
+            function setupCursorCanvas() { cursorCanvas.width = window.innerWidth; cursorCanvas.height = window.innerHeight; }
+            function cursorUpdate(t) {
+                if (!cursorMoved) { cursorPointer.x = (.5 + .3 * Math.cos(.002 * t) * Math.sin(.005 * t)) * window.innerWidth; cursorPointer.y = (.5 + .2 * Math.cos(.005 * t) + .1 * Math.cos(.01 * t)) * window.innerHeight; }
+                cursorCtx.clearRect(0, 0, cursorCanvas.width, cursorCanvas.height);
+                cursorTrail.forEach((p, pIdx) => { const prev = pIdx === 0 ? cursorPointer : cursorTrail[pIdx - 1]; const spring = pIdx === 0 ? .4 * cursorParams.spring : cursorParams.spring; p.dx += (prev.x - p.x) * spring; p.dy += (prev.y - p.y) * spring; p.dx *= cursorParams.friction; p.dy *= cursorParams.friction; p.x += p.dx; p.y += p.dy; });
+                cursorCtx.lineCap = 'round'; cursorCtx.strokeStyle = '#111111'; cursorCtx.beginPath(); cursorCtx.moveTo(cursorTrail[0].x, cursorTrail[0].y);
+                for (let i = 1; i < cursorTrail.length - 1; i++) { const xc = .5 * (cursorTrail[i].x + cursorTrail[i + 1].x); const yc = .5 * (cursorTrail[i].y + cursorTrail[i + 1].y); cursorCtx.quadraticCurveTo(cursorTrail[i].x, cursorTrail[i].y, xc, yc); cursorCtx.lineWidth = cursorParams.widthFactor * (cursorParams.pointsNumber - i); cursorCtx.stroke(); }
+                cursorCtx.lineTo(cursorTrail[cursorTrail.length - 1].x, cursorTrail[cursorTrail.length - 1].y); cursorCtx.stroke();
+                window.requestAnimationFrame(cursorUpdate);
+            }
+            setupCursorCanvas(); cursorUpdate(0); window.addEventListener('resize', setupCursorCanvas);
+        })();
+    </script>
+</body></html>

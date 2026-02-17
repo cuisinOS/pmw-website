@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMW – Projelerimiz</title>
+<meta name="description" content="PMW Global Brand Systems – Tamamladığımız projeler ve başarı hikayelerimiz. CMS, ERP, Website, Tasarım ve Brandkit çözümlerimizi keşfedin.">
+<meta name="keywords" content="PMW, projeler, CMS, ERP, website, tasarım, brandkit, dijital çözümler, İstanbul">
+<meta property="og:title" content="PMW – Projelerimiz">
+<meta property="og:description" content="Tamamladığımız projeler ve başarı hikayelerimiz. CMS, ERP, Website, Tasarım ve Brandkit çözümlerimizi keşfedin.">
+<meta property="og:image" content="pmw-logo.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PMW – Projelerimiz">
+<meta name="twitter:description" content="Tamamladığımız projeler ve başarı hikayelerimiz. CMS, ERP, Website, Tasarım ve Brandkit çözümlerimizi keşfedin.">
+<link rel="icon" type="image/png" href="pmw-logo.png">
+<link rel="apple-touch-icon" href="pmw-logo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@font-face {
+  font-family: 'Alliance No.1';
+  src: url('fonts/Degarism Studio - Alliance No.1 Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Alliance No.2';
+  src: url('fonts/Degarism Studio - Alliance No.2 Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+font-family: 'Alliance No.1', sans-serif;
+overflow-x: hidden;
+}
+.font-mono-display {
+font-family: 'Alliance No.2', monospace;
+}
+.reveal {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.active {
+opacity: 1;
+transform: translateY(0);
+}
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  body { cursor: auto !important; }
+  #cursor-canvas { display: none !important; }
+}
+</style>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+sans: ["'Alliance No.1'", 'sans-serif'],
+mono: ["'Alliance No.2'", 'monospace'],
+},
+}
+},
+plugins: [
+function({ addUtilities }) {
+const rotateXUtilities = {};
+const rotateYUtilities = {};
+const rotateValues = [0, 5, 10, 15, 20, 30, 45, 75];
+rotateValues.forEach((value) => {
+rotateXUtilities[`.rotate-x-${value}`] = {
+'--tw-rotate-x': `${value}deg`,
+transform: `translate3d(var(--tw-translate-x, 0), var(--tw-translate-y, 0), var(--tw-translate-z, 0)) rotateX(var(--tw-rotate-x, 0)) rotateY(var(--tw-rotate-y, 0)) rotateZ(var(--tw-rotate-z, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1))`,
+};
+});
+rotateValues.forEach((value) => {
+rotateYUtilities[`.rotate-y-${value}`] = {
+'--tw-rotate-y': `${value}deg`,
+transform: `translate3d(var(--tw-translate-x, 0), var(--tw-translate-y, 0), var(--tw-translate-z, 0)) rotateX(var(--tw-rotate-x, 0)) rotateY(var(--tw-rotate-y, 0)) rotateZ(var(--tw-rotate-z, 0)) skewX(var(--tw-skew-x, 0)) skewY(var(--tw-skew-y, 0)) scaleX(var(--tw-scale-x, 1)) scaleY(var(--tw-scale-y, 1))`,
+};
+});
+const perspectiveUtilities = {
+".perspective-none": { perspective: "none" },
+".perspective-dramatic": { perspective: "100px" },
+".perspective-near": { perspective: "300px" },
+".perspective-normal": { perspective: "500px" },
+".perspective-midrange": { perspective: "800px" },
+".perspective-distant": { perspective: "1200px" },
+".perspective-1000": { perspective: "1000px" },
+};
+const transformStyleUtilities = {
+".transform-style-preserve-3d": { "transform-style": "preserve-3d" },
+".transform-style-flat": { "transform-style": "flat" },
+};
+addUtilities({
+...rotateXUtilities,
+...rotateYUtilities,
+...perspectiveUtilities,
+...transformStyleUtilities,
+});
+}
+]
+};
+</script></head>
+<body class="bg-[#fdfdfc] text-neutral-900 antialiased selection:bg-neutral-900 selection:text-white cursor-none">
+
+    <canvas id="cursor-canvas" class="fixed inset-0 z-[9999] pointer-events-none"></canvas>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-4 md:px-12 md:py-6 w-full max-w-[1800px] mx-auto bg-[#fdfdfc]/80 backdrop-blur-md transition-all duration-300 border-b border-transparent" id="navbar">
+        <a href="index.html" class="cursor-pointer hover:opacity-70 transition-opacity">
+            <img src="pmw-logo.png" alt="PMW" class="h-[84px] md:h-[96px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="text-xl font-semibold tracking-tight hidden">PMW</span>
+        </a>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-neutral-600">
+            <a href="index.html#hizmetler" class="hover:text-black transition-colors" data-i18n="nav.services">Hizmetler</a>
+            <a href="projeler.html" class="text-black hover:text-black transition-colors" data-i18n="nav.projects">Projelerimiz</a>
+            <a href="index.html#surec" class="hover:text-black transition-colors" data-i18n="nav.process">Süreçler</a>
+            <a href="index.html#iletisim" class="hover:text-black transition-colors" data-i18n="nav.contact">İletişim</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button id="lang-toggle" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-neutral-200 text-xs font-semibold text-neutral-600 hover:bg-neutral-100 transition-colors cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                <span id="lang-label">EN</span>
+            </button>
+            <a href="index.html#iletisim" class="hidden md:block px-5 py-2.5 bg-neutral-900 text-white rounded-full text-xs font-semibold hover:bg-neutral-700 hover:scale-105 transition-all duration-300 shadow-lg shadow-neutral-200/50" data-i18n="nav.cta">
+                PMW ile Tanışın
+            </a>
+            <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full border border-neutral-200 hover:bg-neutral-100 transition-colors" aria-label="Menü">
+                <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#fdfdfc]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden">
+        <a href="index.html#hizmetler" class="mobile-menu-link text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.services">Hizmetler</a>
+        <a href="projeler.html" class="text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.projects">Projelerimiz</a>
+        <a href="index.html#surec" class="mobile-menu-link text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.process">Süreçler</a>
+        <a href="index.html#iletisim" class="mobile-menu-link text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.contact">İletişim</a>
+        <button id="mobile-lang-toggle" class="flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-200 text-sm font-semibold text-neutral-600 hover:bg-neutral-100 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            <span id="mobile-lang-label">EN</span>
+        </button>
+        <a href="index.html#iletisim" class="mobile-menu-link mt-2 px-8 py-3.5 bg-neutral-900 text-white rounded-full text-sm font-semibold hover:bg-neutral-700 transition-colors" data-i18n="nav.cta">
+            PMW ile Tanışın
+        </a>
+    </div>
+
+    <main class="md:px-8 w-full max-w-[1800px] mt-24 mr-auto ml-auto pr-4 pb-20 pl-4">
+
+        <!-- Hero -->
+        <section class="pt-10 md:pt-20 pb-12 relative">
+            <div class="max-w-4xl reveal">
+                <div class="text-xs font-semibold tracking-widest text-neutral-500 uppercase mb-4" data-i18n="projects.label">Portföy</div>
+                <h1 class="md:text-7xl lg:text-8xl leading-[1.05] text-5xl font-semibold tracking-tighter mb-6" data-i18n="projects.title">Projelerimiz</h1>
+                <p class="text-lg md:text-xl text-neutral-600 max-w-2xl font-medium leading-relaxed" data-i18n="projects.subtitle">CMS, ERP, web platformları, tasarım sistemleri ve marka kimlikleri alanlarında tamamladığımız projeler ve başarı hikayelerimiz.</p>
+            </div>
+        </section>
+
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent my-12 opacity-50"></div>
+
+        <!-- Filter Buttons -->
+        <section class="mb-12 reveal">
+            <div class="flex flex-wrap gap-3" id="filter-buttons">
+                <button onclick="filterProjects('all', this)" class="filter-btn px-5 py-2.5 bg-neutral-900 text-white rounded-full text-sm font-medium hover:bg-neutral-700 transition-all duration-300" data-i18n="filter.all">Tümü</button>
+                <button onclick="filterProjects('cms', this)" class="filter-btn px-5 py-2.5 bg-neutral-100 text-neutral-600 rounded-full text-sm font-medium hover:bg-neutral-200 transition-all duration-300" data-i18n="filter.cms">CMS</button>
+                <button onclick="filterProjects('erp', this)" class="filter-btn px-5 py-2.5 bg-neutral-100 text-neutral-600 rounded-full text-sm font-medium hover:bg-neutral-200 transition-all duration-300" data-i18n="filter.erp">ERP</button>
+                <button onclick="filterProjects('website', this)" class="filter-btn px-5 py-2.5 bg-neutral-100 text-neutral-600 rounded-full text-sm font-medium hover:bg-neutral-200 transition-all duration-300" data-i18n="filter.website">Website</button>
+                <button onclick="filterProjects('tasarim', this)" class="filter-btn px-5 py-2.5 bg-neutral-100 text-neutral-600 rounded-full text-sm font-medium hover:bg-neutral-200 transition-all duration-300" data-i18n="filter.tasarim">Tasarım</button>
+                <button onclick="filterProjects('brandkit', this)" class="filter-btn px-5 py-2.5 bg-neutral-100 text-neutral-600 rounded-full text-sm font-medium hover:bg-neutral-200 transition-all duration-300" data-i18n="filter.brandkit">Brandkit</button>
+            </div>
+        </section>
+
+        <!-- Project Grid -->
+        <section class="mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="project-grid">
+
+                <!-- CMS 1 -->
+                <a href="index.html#iletisim" class="project-card group reveal" data-category="cms">
+                    <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                        <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 relative flex items-center justify-center overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/20 w-24 h-24"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full">CMS</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-blue-600 transition-colors" data-i18n="project.cms1.title">MarkaHub CMS</h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed mb-4" data-i18n="project.cms1.desc">Çok dilli ve çok markalı içerik yönetim platformu</p>
+                            <div class="flex items-center gap-2 text-sm font-medium text-neutral-900 group-hover:gap-3 transition-all duration-300">
+                                <span data-i18n="project.detail">Detay</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- CMS 2 -->
+                <a href="index.html#iletisim" class="project-card group reveal delay-100" data-category="cms">
+                    <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                        <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 relative flex items-center justify-center overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/20 w-24 h-24"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full">CMS</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-blue-600 transition-colors" data-i18n="project.cms2.title">E-Ticaret İçerik Sistemi</h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed mb-4" data-i18n="project.cms2.desc">Ürün kataloğu, kampanya ve içerik yönetimi</p>
+                            <div class="flex items-center gap-2 text-sm font-medium text-neutral-900 group-hover:gap-3 transition-all duration-300">
+                                <span data-i18n="project.detail">Detay</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ERP 1 -->
+                <a href="index.html#iletisim" class="project-card group reveal delay-200" data-category="erp">
+                    <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                        <div class="h-48 bg-gradient-to-br from-violet-500 to-purple-600 relative flex items-center justify-center overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/20 w-24 h-24"><path d="M3 3v18h18"></path><path d="m19 9-5 5-4-4-3 3"></path></svg>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full">ERP</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-violet-600 transition-colors" data-i18n="project.erp1.title">PMW Operations Suite</h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed mb-4" data-i18n="project.erp1.desc">Entegre operasyon ve tedarik zinciri yönetim platformu</p>
+                            <div class="flex items-center gap-2 text-sm font-medium text-neutral-900 group-hover:gap-3 transition-all duration-300">
+                                <span data-i18n="project.detail">Detay</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ERP 2 -->
+                <a href="index.html#iletisim" class="project-card group reveal" data-category="erp">
+                    <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                        <div class="h-48 bg-gradient-to-br from-violet-500 to-purple-600 relative flex items-center justify-center overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/20 w-24 h-24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full">ERP</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-violet-600 transition-colors" data-i18n="project.erp2.title">Lisans Takip ERP</h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed mb-4" data-i18n="project.erp2.desc">Lisanslı ürün süreç ve onay yönetimi</p>
+                            <div class="flex items-center gap-2 text-sm font-medium text-neutral-900 group-hover:gap-3 transition-all duration-300">
+                                <span data-i18n="project.detail">Detay</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Website 1 -->
+                <a href="index.html#iletisim" class="project-card group reveal delay-100" data-category="website">
+                    <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                        <div class="h-48 bg-gradient-to-br from-emerald-500 to-teal-600 relative flex items-center justify-center overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/20 w-24 h-24"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full">Website</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-emerald-600 transition-colors" data-i18n="project.web1.title">Kurumsal Web Platformu</h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed mb-4" data-i18n="project.web1.desc">Responsive ve performans odaklı kurumsal web sitesi</p>
+                            <div class="flex items-center gap-2 text-sm font-medium text-neutral-900 group-hover:gap-3 transition-all duration-300">
+                                <span data-i18n="project.detail">Detay</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Website 2 -->
+                <a href="index.html#iletisim" class="project-card group reveal delay-200" data-category="website">
+                    <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                        <div class="h-48 bg-gradient-to-br from-emerald-500 to-teal-600 relative flex items-center justify-center overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/20 w-24 h-24"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full">Website</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-emerald-600 transition-colors" data-i18n="project.web2.title">Koleksiyon Vitrini</h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed mb-4" data-i18n="project.web2.desc">Ürün koleksiyonları için interaktif tanıtım sitesi</p>
+                            <div class="flex items-center gap-2 text-sm font-medium text-neutral-900 group-hover:gap-3 transition-all duration-300">
+                                <span data-i18n="project.detail">Detay</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Website 3 -->
+                <a href="index.html#iletisim" class="project-card group reveal" data-category="website">
+                    <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                        <div class="h-48 bg-gradient-to-br from-emerald-500 to-teal-600 relative flex items-center justify-center overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/20 w-24 h-24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full">Website</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-emerald-600 transition-colors" data-i18n="project.web3.title">Fan Experience Portal</h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed mb-4" data-i18n="project.web3.desc">Taraftar etkileşim ve deneyim platformu</p>
+                            <div class="flex items-center gap-2 text-sm font-medium text-neutral-900 group-hover:gap-3 transition-all duration-300">
+                                <span data-i18n="project.detail">Detay</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tasarım 1 -->
+                <a href="index.html#iletisim" class="project-card group reveal delay-100" data-category="tasarim">
+                    <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                        <div class="h-48 bg-gradient-to-br from-amber-500 to-orange-600 relative flex items-center justify-center overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/20 w-24 h-24"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"></path><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"></path><path d="M12 2v2"></path><path d="M12 22v-2"></path><path d="m17 20.66-1-1.73"></path><path d="M11 10.27 7 3.34"></path><path d="m20.66 17-1.73-1"></path><path d="m3.34 7 1.73 1"></path><path d="M14 12h8"></path><path d="M2 12h2"></path><path d="m20.66 7-1.73 1"></path><path d="m3.34 17 1.73-1"></path><path d="m17 3.34-1 1.73"></path><path d="m11 13.73-4 6.93"></path></svg>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full" data-i18n="filter.tasarim">Tasarım</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-amber-600 transition-colors" data-i18n="project.design1.title">Spor Koleksiyonu Tasarımı</h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed mb-4" data-i18n="project.design1.desc">Lisanslı spor ürünleri marka tasarımı</p>
+                            <div class="flex items-center gap-2 text-sm font-medium text-neutral-900 group-hover:gap-3 transition-all duration-300">
+                                <span data-i18n="project.detail">Detay</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tasarım 2 -->
+                <a href="index.html#iletisim" class="project-card group reveal delay-200" data-category="tasarim">
+                    <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                        <div class="h-48 bg-gradient-to-br from-amber-500 to-orange-600 relative flex items-center justify-center overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/20 w-24 h-24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path></svg>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full" data-i18n="filter.tasarim">Tasarım</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-amber-600 transition-colors" data-i18n="project.design2.title">Kurumsal Kimlik Sistemi</h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed mb-4" data-i18n="project.design2.desc">360° marka kimliği ve görsel dil sistemi</p>
+                            <div class="flex items-center gap-2 text-sm font-medium text-neutral-900 group-hover:gap-3 transition-all duration-300">
+                                <span data-i18n="project.detail">Detay</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tasarım 3 -->
+                <a href="index.html#iletisim" class="project-card group reveal" data-category="tasarim">
+                    <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                        <div class="h-48 bg-gradient-to-br from-amber-500 to-orange-600 relative flex items-center justify-center overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/20 w-24 h-24"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"></path><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"></path><path d="M2 7h20"></path><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"></path></svg>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full" data-i18n="filter.tasarim">Tasarım</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-amber-600 transition-colors" data-i18n="project.design3.title">Mağaza Deneyim Tasarımı</h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed mb-4" data-i18n="project.design3.desc">Perakende mağaza konsept ve iç mekan tasarımı</p>
+                            <div class="flex items-center gap-2 text-sm font-medium text-neutral-900 group-hover:gap-3 transition-all duration-300">
+                                <span data-i18n="project.detail">Detay</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Brandkit 1 -->
+                <a href="index.html#iletisim" class="project-card group reveal delay-100" data-category="brandkit">
+                    <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                        <div class="h-48 bg-gradient-to-br from-rose-500 to-pink-600 relative flex items-center justify-center overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/20 w-24 h-24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path></svg>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full">Brandkit</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-rose-600 transition-colors" data-i18n="project.brand1.title">PMW Brand Guidelines</h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed mb-4" data-i18n="project.brand1.desc">Kapsamlı marka kullanım ve uygulama kılavuzu</p>
+                            <div class="flex items-center gap-2 text-sm font-medium text-neutral-900 group-hover:gap-3 transition-all duration-300">
+                                <span data-i18n="project.detail">Detay</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Brandkit 2 -->
+                <a href="index.html#iletisim" class="project-card group reveal delay-200" data-category="brandkit">
+                    <div class="bg-white rounded-2xl border border-neutral-200 overflow-hidden hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                        <div class="h-48 bg-gradient-to-br from-rose-500 to-pink-600 relative flex items-center justify-center overflow-hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="text-white/20 w-24 h-24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.29 7 12 12 20.71 7"></polyline><line x1="12" x2="12" y1="22" y2="12"></line></svg>
+                            <div class="absolute top-4 left-4">
+                                <span class="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-semibold rounded-full">Brandkit</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-lg font-semibold tracking-tight mb-2 group-hover:text-rose-600 transition-colors" data-i18n="project.brand2.title">Dijital Varlık Paketi</h3>
+                            <p class="text-sm text-neutral-500 leading-relaxed mb-4" data-i18n="project.brand2.desc">Sosyal medya, sunum ve dijital iletişim şablonları</p>
+                            <div class="flex items-center gap-2 text-sm font-medium text-neutral-900 group-hover:gap-3 transition-all duration-300">
+                                <span data-i18n="project.detail">Detay</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="mb-20">
+            <div class="relative w-full rounded-[2.5rem] bg-[#111111] overflow-hidden px-8 py-20 md:py-32 text-center reveal">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-900/20 rounded-full blur-[120px] pointer-events-none"></div>
+                <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+                    <h2 class="text-5xl md:text-7xl lg:text-8xl font-semibold text-white tracking-tighter leading-none mb-8" data-i18n="projects.cta.title" data-i18n-html="true">Projeniz İçin<br>Bize Ulaşın.</h2>
+                    <p class="text-neutral-400 text-lg md:text-xl mb-10 max-w-lg leading-relaxed" data-i18n="projects.cta.desc">Bir sonraki projenizi birlikte hayata geçirelim. Strateji, tasarım ve teknoloji bir arada.</p>
+                    <div class="flex flex-col md:flex-row items-center gap-4 w-full justify-center">
+                         <a href="index.html#iletisim" class="px-10 py-4 bg-white text-black rounded-full text-base font-bold hover:bg-neutral-200 hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.15)] min-w-[200px] text-center" data-i18n="projects.cta.quote">Teklif Alın</a>
+                        <a href="index.html#iletisim" class="px-10 py-4 bg-transparent border border-neutral-700 text-white rounded-full text-base font-semibold hover:border-white transition-all duration-300 min-w-[200px] text-center" data-i18n="projects.cta.contact">Bize Ulaşın</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="w-full h-px bg-neutral-200 my-12"></div>
+
+        <!-- Footer -->
+        <section class="mt-20 overflow-hidden border-t border-black pt-12 relative">
+            <div class="w-full overflow-hidden py-10">
+                <h1 class="text-[15vw] leading-[0.8] uppercase whitespace-nowrap select-none transition-transform duration-75 will-change-transform font-bold text-black tracking-tighter translate-x-0" style="transform: translateX(0px)" id="footer-text">PMW Global Brand Systems</h1>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-8 gap-6 pb-12 reveal">
+                <div class="flex gap-4">
+                    <a href="#" class="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center border border-neutral-200 hover:bg-black hover:text-white hover:border-black transition-all duration-300" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center border border-neutral-200 hover:bg-black hover:text-white hover:border-black transition-all duration-300" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                    </a>
+                    <a href="#" class="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center border border-neutral-200 hover:bg-black hover:text-white hover:border-black transition-all duration-300" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+                <div class="flex flex-wrap gap-8 text-sm font-medium text-neutral-500">
+                    <a href="gizlilik.html" class="hover:text-black relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-all" data-i18n="footer.privacy">Gizlilik Politikası</a>
+                    <a href="kullanim-kosullari.html" class="hover:text-black relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-all" data-i18n="footer.terms">Kullanım Koşulları</a>
+                    <a href="kariyer.html" class="hover:text-black relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-all" data-i18n="footer.careers">Kariyer</a>
+                </div>
+                <div class="text-sm font-medium text-neutral-400" data-i18n="footer.copy">&copy; 2026 PMW. Tüm hakları saklıdır.</div>
+            </div>
+        </section>
+
+    </main>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 w-12 h-12 bg-neutral-900 text-white rounded-full flex items-center justify-center shadow-lg shadow-neutral-900/20 hover:bg-neutral-700 hover:scale-110 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <script>
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+        let menuOpen = false;
+        mobileMenuBtn.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('translate-y-full', !menuOpen);
+            mobileMenu.classList.toggle('translate-y-0', menuOpen);
+            menuIconOpen.classList.toggle('hidden', menuOpen);
+            menuIconClose.classList.toggle('hidden', !menuOpen);
+        });
+        document.querySelectorAll('.mobile-menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.add('translate-y-full');
+                mobileMenu.classList.remove('translate-y-0');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            });
+        });
+
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Scroll effects
+        const footerText = document.getElementById('footer-text');
+        const navbar = document.getElementById('navbar');
+        const backToTop = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            if(scrollY > 50) { navbar.classList.add('shadow-sm', 'bg-[#fdfdfc]/90'); }
+            else { navbar.classList.remove('shadow-sm', 'bg-[#fdfdfc]/90'); }
+            if (footerText) {
+                const fp = footerText.getBoundingClientRect().top;
+                if (fp < windowHeight) footerText.style.transform = 'translateX(-' + ((windowHeight - fp) * 0.1) + 'px)';
+            }
+            if (scrollY > 500) { backToTop.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none'); backToTop.classList.add('opacity-100', 'translate-y-0'); }
+            else { backToTop.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none'); backToTop.classList.remove('opacity-100', 'translate-y-0'); }
+        });
+
+        // Reveal on load
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.reveal').forEach((el, index) => {
+                if(el.getBoundingClientRect().top < window.innerHeight) setTimeout(() => el.classList.add('active'), index * 100);
+            });
+        });
+
+        // Back to top
+        backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+        // Project filtering
+        function filterProjects(category, clickedBtn) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-neutral-900', 'text-white');
+                btn.classList.add('bg-neutral-100', 'text-neutral-600');
+            });
+            clickedBtn.classList.remove('bg-neutral-100', 'text-neutral-600');
+            clickedBtn.classList.add('bg-neutral-900', 'text-white');
+
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (category === 'all' || cardCategory === category) {
+                    card.style.display = 'block';
+                    card.classList.remove('active');
+                    setTimeout(() => card.classList.add('active'), 50);
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // i18n system
+        let currentLang = 'tr';
+        const translations = {
+            tr: {
+                'nav.services':'Hizmetler','nav.projects':'Projelerimiz','nav.process':'Süreçler','nav.contact':'İletişim','nav.cta':'PMW ile Tanışın',
+                'projects.label':'Portföy','projects.title':'Projelerimiz','projects.subtitle':'CMS, ERP, web platformları, tasarım sistemleri ve marka kimlikleri alanlarında tamamladığımız projeler ve başarı hikayelerimiz.',
+                'filter.all':'Tümü','filter.cms':'CMS','filter.erp':'ERP','filter.website':'Website','filter.tasarim':'Tasarım','filter.brandkit':'Brandkit',
+                'project.detail':'Detay',
+                'project.cms1.title':'MarkaHub CMS','project.cms1.desc':'Çok dilli ve çok markalı içerik yönetim platformu',
+                'project.cms2.title':'E-Ticaret İçerik Sistemi','project.cms2.desc':'Ürün kataloğu, kampanya ve içerik yönetimi',
+                'project.erp1.title':'PMW Operations Suite','project.erp1.desc':'Entegre operasyon ve tedarik zinciri yönetim platformu',
+                'project.erp2.title':'Lisans Takip ERP','project.erp2.desc':'Lisanslı ürün süreç ve onay yönetimi',
+                'project.web1.title':'Kurumsal Web Platformu','project.web1.desc':'Responsive ve performans odaklı kurumsal web sitesi',
+                'project.web2.title':'Koleksiyon Vitrini','project.web2.desc':'Ürün koleksiyonları için interaktif tanıtım sitesi',
+                'project.web3.title':'Fan Experience Portal','project.web3.desc':'Taraftar etkileşim ve deneyim platformu',
+                'project.design1.title':'Spor Koleksiyonu Tasarımı','project.design1.desc':'Lisanslı spor ürünleri marka tasarımı',
+                'project.design2.title':'Kurumsal Kimlik Sistemi','project.design2.desc':'360° marka kimliği ve görsel dil sistemi',
+                'project.design3.title':'Mağaza Deneyim Tasarımı','project.design3.desc':'Perakende mağaza konsept ve iç mekan tasarımı',
+                'project.brand1.title':'PMW Brand Guidelines','project.brand1.desc':'Kapsamlı marka kullanım ve uygulama kılavuzu',
+                'project.brand2.title':'Dijital Varlık Paketi','project.brand2.desc':'Sosyal medya, sunum ve dijital iletişim şablonları',
+                'projects.cta.title':'Projeniz \u0130\u00e7in<br>Bize Ula\u015f\u0131n.','projects.cta.desc':'Bir sonraki projenizi birlikte hayata geçirelim. Strateji, tasarım ve teknoloji bir arada.',
+                'projects.cta.quote':'Teklif Alın','projects.cta.contact':'Bize Ulaşın',
+                'footer.privacy':'Gizlilik Politikası','footer.terms':'Kullanım Koşulları','footer.careers':'Kariyer','footer.copy':'© 2026 PMW. Tüm hakları saklıdır.'
+            },
+            en: {
+                'nav.services':'Services','nav.projects':'Projects','nav.process':'Process','nav.contact':'Contact','nav.cta':'Meet PMW',
+                'projects.label':'Portfolio','projects.title':'Our Projects','projects.subtitle':'Our completed projects and success stories across CMS, ERP, web platforms, design systems and brand identities.',
+                'filter.all':'All','filter.cms':'CMS','filter.erp':'ERP','filter.website':'Website','filter.tasarim':'Design','filter.brandkit':'Brandkit',
+                'project.detail':'Details',
+                'project.cms1.title':'MarkaHub CMS','project.cms1.desc':'Multi-language and multi-brand content management platform',
+                'project.cms2.title':'E-Commerce Content System','project.cms2.desc':'Product catalog, campaign and content management',
+                'project.erp1.title':'PMW Operations Suite','project.erp1.desc':'Integrated operations and supply chain management platform',
+                'project.erp2.title':'License Tracking ERP','project.erp2.desc':'Licensed product process and approval management',
+                'project.web1.title':'Corporate Web Platform','project.web1.desc':'Responsive and performance-focused corporate website',
+                'project.web2.title':'Collection Showcase','project.web2.desc':'Interactive showcase site for product collections',
+                'project.web3.title':'Fan Experience Portal','project.web3.desc':'Fan engagement and experience platform',
+                'project.design1.title':'Sports Collection Design','project.design1.desc':'Licensed sports products brand design',
+                'project.design2.title':'Corporate Identity System','project.design2.desc':'360\u00b0 brand identity and visual language system',
+                'project.design3.title':'Store Experience Design','project.design3.desc':'Retail store concept and interior design',
+                'project.brand1.title':'PMW Brand Guidelines','project.brand1.desc':'Comprehensive brand usage and application guide',
+                'project.brand2.title':'Digital Asset Package','project.brand2.desc':'Social media, presentation and digital communication templates',
+                'projects.cta.title':'Contact Us<br>For Your Project.','projects.cta.desc':'Let\u0027s bring your next project to life together. Strategy, design and technology combined.',
+                'projects.cta.quote':'Get a Quote','projects.cta.contact':'Contact Us',
+                'footer.privacy':'Privacy Policy','footer.terms':'Terms of Use','footer.careers':'Careers','footer.copy':'\u00a9 2026 PMW. All rights reserved.'
+            }
+        };
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(function(el) {
+                var key = el.getAttribute('data-i18n');
+                var val = translations[lang] ? translations[lang][key] : null;
+                if (!val) return;
+                if (el.getAttribute('data-i18n-html') === 'true') {
+                    el.innerHTML = val; // Safe: translations are static trusted strings, not user input
+                } else {
+                    el.textContent = val;
+                }
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+                var key = el.getAttribute('data-i18n-placeholder');
+                var val = translations[lang] ? translations[lang][key] : null;
+                if (val) el.placeholder = val;
+            });
+            var label = lang === 'tr' ? 'EN' : 'TR';
+            var langLabel = document.getElementById('lang-label');
+            var mobileLangLabel = document.getElementById('mobile-lang-label');
+            if (langLabel) langLabel.textContent = label;
+            if (mobileLangLabel) mobileLangLabel.textContent = label;
+        }
+
+        var langToggle = document.getElementById('lang-toggle');
+        if (langToggle) {
+            langToggle.addEventListener('click', function() { setLanguage(currentLang === 'tr' ? 'en' : 'tr'); });
+        }
+        var mobileLangToggle = document.getElementById('mobile-lang-toggle');
+        if (mobileLangToggle) {
+            mobileLangToggle.addEventListener('click', function() { setLanguage(currentLang === 'tr' ? 'en' : 'tr'); });
+        }
+
+        // Cursor trail
+        (function() {
+            var hasHover = window.matchMedia('(hover: hover)').matches;
+            var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            var cursorCanvas = document.getElementById('cursor-canvas');
+            if (!hasHover || prefersReducedMotion) { cursorCanvas.style.display = 'none'; document.body.style.cursor = 'auto'; return; }
+            var cursorCtx = cursorCanvas.getContext('2d');
+            var cursorMoved = false;
+            var cursorPointer = { x: .5 * window.innerWidth, y: .5 * window.innerHeight };
+            var cursorParams = { pointsNumber: 40, widthFactor: .3, spring: .4, friction: .5 };
+            var cursorTrail = new Array(cursorParams.pointsNumber);
+            for (var i = 0; i < cursorParams.pointsNumber; i++) cursorTrail[i] = { x: cursorPointer.x, y: cursorPointer.y, dx: 0, dy: 0 };
+            function updateCursorPos(eX, eY) { cursorPointer.x = eX; cursorPointer.y = eY; }
+            window.addEventListener('mousemove', function(e) { cursorMoved = true; updateCursorPos(e.clientX, e.clientY); });
+            window.addEventListener('click', function(e) { updateCursorPos(e.clientX, e.clientY); });
+            window.addEventListener('touchmove', function(e) { cursorMoved = true; updateCursorPos(e.targetTouches[0].clientX, e.targetTouches[0].clientY); });
+            function setupCursorCanvas() { cursorCanvas.width = window.innerWidth; cursorCanvas.height = window.innerHeight; }
+            function cursorUpdate(t) {
+                if (!cursorMoved) { cursorPointer.x = (.5 + .3 * Math.cos(.002 * t) * Math.sin(.005 * t)) * window.innerWidth; cursorPointer.y = (.5 + .2 * Math.cos(.005 * t) + .1 * Math.cos(.01 * t)) * window.innerHeight; }
+                cursorCtx.clearRect(0, 0, cursorCanvas.width, cursorCanvas.height);
+                cursorTrail.forEach(function(p, pIdx) { var prev = pIdx === 0 ? cursorPointer : cursorTrail[pIdx - 1]; var spring = pIdx === 0 ? .4 * cursorParams.spring : cursorParams.spring; p.dx += (prev.x - p.x) * spring; p.dy += (prev.y - p.y) * spring; p.dx *= cursorParams.friction; p.dy *= cursorParams.friction; p.x += p.dx; p.y += p.dy; });
+                cursorCtx.lineCap = 'round'; cursorCtx.strokeStyle = '#111111'; cursorCtx.beginPath(); cursorCtx.moveTo(cursorTrail[0].x, cursorTrail[0].y);
+                for (var i = 1; i < cursorTrail.length - 1; i++) { var xc = .5 * (cursorTrail[i].x + cursorTrail[i + 1].x); var yc = .5 * (cursorTrail[i].y + cursorTrail[i + 1].y); cursorCtx.quadraticCurveTo(cursorTrail[i].x, cursorTrail[i].y, xc, yc); cursorCtx.lineWidth = cursorParams.widthFactor * (cursorParams.pointsNumber - i); cursorCtx.stroke(); }
+                cursorCtx.lineTo(cursorTrail[cursorTrail.length - 1].x, cursorTrail[cursorTrail.length - 1].y); cursorCtx.stroke();
+                window.requestAnimationFrame(cursorUpdate);
+            }
+            setupCursorCanvas(); cursorUpdate(0); window.addEventListener('resize', setupCursorCanvas);
+        })();
+    </script>
+</body></html>
