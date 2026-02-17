@@ -255,7 +255,7 @@ addUtilities({ ...rX, ...rY, '.perspective-none': { perspective: 'none' }, '.per
         window.addEventListener('load',function(){document.querySelectorAll('.reveal').forEach(function(el,i){if(el.getBoundingClientRect().top<window.innerHeight)setTimeout(function(){el.classList.add('active');},i*100);});});
         backToTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 
-        var currentLang='tr';
+        var currentLang=localStorage.getItem('pmw-lang')||'tr';
         var translations={
             tr:{'nav.services':'Hizmetler','nav.projects':'Projelerimiz','nav.process':'Süreçler','nav.contact':'İletişim','nav.cta':'PMW ile Tanışın',
                 'page.label':'Hizmetler','page.title':'Spor & Lisanslı Ürünler','page.subtitle':'Federasyonlardan kulüplere, global markalardan yerel takımlara kadar lisanslı ürün dünyasının tüm dinamiklerini yönetiyor, konseptten rafa eksiksiz çözümler sunuyoruz.',
@@ -294,12 +294,13 @@ addUtilities({ ...rX, ...rY, '.perspective-none': { perspective: 'none' }, '.per
                 'cta.title':'Contact Us<br>For Your Project.','cta.desc':'Let\u0027s bring your licensed product project to life together. Strategy, design and production combined.','cta.quote':'Get a Quote','cta.contact':'Contact Us',
                 'footer.privacy':'Privacy Policy','footer.terms':'Terms of Use','footer.careers':'Careers','footer.copy':'\u00a9 2026 PMW. All rights reserved.'}
         };
-        function setLanguage(lang){currentLang=lang;document.documentElement.lang=lang;
+        function setLanguage(lang){currentLang=lang;localStorage.setItem('pmw-lang',lang);document.documentElement.lang=lang;
             document.querySelectorAll('[data-i18n]').forEach(function(el){var k=el.getAttribute('data-i18n');var v=translations[lang]?translations[lang][k]:null;if(!v)return;if(el.getAttribute('data-i18n-html')==='true'){el.innerHTML=v;} else{el.textContent=v;}});  // Safe: translations are static trusted strings, not user input
             document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){var k=el.getAttribute('data-i18n-placeholder');var v=translations[lang]?translations[lang][k]:null;if(v)el.placeholder=v;});
             var label=lang==='tr'?'EN':'TR';var ll=document.getElementById('lang-label');var ml=document.getElementById('mobile-lang-label');if(ll)ll.textContent=label;if(ml)ml.textContent=label;}
         var lt=document.getElementById('lang-toggle');if(lt)lt.addEventListener('click',function(){setLanguage(currentLang==='tr'?'en':'tr');});
         var mlt=document.getElementById('mobile-lang-toggle');if(mlt)mlt.addEventListener('click',function(){setLanguage(currentLang==='tr'?'en':'tr');});
+        if(currentLang!=='tr')setLanguage(currentLang);
 
         (function(){var hh=window.matchMedia('(hover: hover)').matches;var pr=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var cc=document.getElementById('cursor-canvas');if(!hh||pr){cc.style.display='none';document.body.style.cursor='auto';return;}var ctx=cc.getContext('2d');var moved=false;var ptr={x:.5*window.innerWidth,y:.5*window.innerHeight};var params={pointsNumber:40,widthFactor:.3,spring:.4,friction:.5};var trail=new Array(params.pointsNumber);for(var i=0;i<params.pointsNumber;i++)trail[i]={x:ptr.x,y:ptr.y,dx:0,dy:0};function up(x,y){ptr.x=x;ptr.y=y;}window.addEventListener('mousemove',function(e){moved=true;up(e.clientX,e.clientY);});window.addEventListener('click',function(e){up(e.clientX,e.clientY);});window.addEventListener('touchmove',function(e){moved=true;up(e.targetTouches[0].clientX,e.targetTouches[0].clientY);});function setup(){cc.width=window.innerWidth;cc.height=window.innerHeight;}function update(t){if(!moved){ptr.x=(.5+.3*Math.cos(.002*t)*Math.sin(.005*t))*window.innerWidth;ptr.y=(.5+.2*Math.cos(.005*t)+.1*Math.cos(.01*t))*window.innerHeight;}ctx.clearRect(0,0,cc.width,cc.height);trail.forEach(function(p,pi){var prev=pi===0?ptr:trail[pi-1];var sp=pi===0?.4*params.spring:params.spring;p.dx+=(prev.x-p.x)*sp;p.dy+=(prev.y-p.y)*sp;p.dx*=params.friction;p.dy*=params.friction;p.x+=p.dx;p.y+=p.dy;});ctx.lineCap='round';ctx.strokeStyle='#111111';ctx.beginPath();ctx.moveTo(trail[0].x,trail[0].y);for(var i=1;i<trail.length-1;i++){var xc=.5*(trail[i].x+trail[i+1].x);var yc=.5*(trail[i].y+trail[i+1].y);ctx.quadraticCurveTo(trail[i].x,trail[i].y,xc,yc);ctx.lineWidth=params.widthFactor*(params.pointsNumber-i);ctx.stroke();}ctx.lineTo(trail[trail.length-1].x,trail[trail.length-1].y);ctx.stroke();window.requestAnimationFrame(update);}setup();update(0);window.addEventListener('resize',setup);})();
     </script>

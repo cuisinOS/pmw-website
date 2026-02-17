@@ -342,7 +342,7 @@ addUtilities({
 
         backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-        let currentLang = 'tr';
+        let currentLang = localStorage.getItem('pmw-lang') || 'tr';
         const translations = {
             tr: {
                 'nav.services':'Hizmetler','nav.projects':'Projelerimiz','nav.process':'Süreçler','nav.contact':'İletişim','nav.cta':'PMW ile Tanışın',
@@ -404,7 +404,7 @@ addUtilities({
             }
         };
         function setLanguage(lang) {
-            currentLang = lang; document.documentElement.lang = lang;
+            currentLang = lang; localStorage.setItem('pmw-lang', lang); document.documentElement.lang = lang;
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 const val = translations[lang]?.[key];
@@ -419,6 +419,7 @@ addUtilities({
         }
         document.getElementById('lang-toggle')?.addEventListener('click', () => { setLanguage(currentLang === 'tr' ? 'en' : 'tr'); });
         document.getElementById('mobile-lang-toggle')?.addEventListener('click', () => { setLanguage(currentLang === 'tr' ? 'en' : 'tr'); });
+        if (currentLang !== 'tr') setLanguage(currentLang);
 
         (function() {
             const hasHover = window.matchMedia('(hover: hover)').matches;

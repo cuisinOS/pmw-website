@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMW – Proje Detay</title>
+<meta name="description" content="PMW Global Brand Systems – Proje detayı">
+<meta property="og:title" content="PMW – Proje Detay">
+<meta property="og:image" content="pmw-logo.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="pmw-logo.png">
+<link rel="apple-touch-icon" href="pmw-logo.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+@font-face { font-family: 'Alliance No.1'; src: url('fonts/Degarism Studio - Alliance No.1 Light.otf') format('opentype'); font-weight: 300; font-style: normal; font-display: swap; }
+@font-face { font-family: 'Alliance No.2'; src: url('fonts/Degarism Studio - Alliance No.2 Light.otf') format('opentype'); font-weight: 300; font-style: normal; font-display: swap; }
+body { font-family: 'Alliance No.1', sans-serif; overflow-x: hidden; }
+.font-mono-display { font-family: 'Alliance No.2', monospace; }
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+@media (hover: none), (prefers-reduced-motion: reduce) { body { cursor: auto !important; } #cursor-canvas { display: none !important; } }
+</style>
+<script>
+tailwind.config = {
+    theme: { extend: { fontFamily: { sans: ["'Alliance No.1'", 'sans-serif'], mono: ["'Alliance No.2'", 'monospace'] } } },
+    plugins: [function({ addUtilities }) {
+        var ru = {}, ryu = {}, rv = [0,5,10,15,20,30,45,75];
+        rv.forEach(function(v) { ru['.rotate-x-'+v] = {'--tw-rotate-x': v+'deg', transform: 'translate3d(var(--tw-translate-x,0),var(--tw-translate-y,0),var(--tw-translate-z,0)) rotateX(var(--tw-rotate-x,0)) rotateY(var(--tw-rotate-y,0)) rotateZ(var(--tw-rotate-z,0)) skewX(var(--tw-skew-x,0)) skewY(var(--tw-skew-y,0)) scaleX(var(--tw-scale-x,1)) scaleY(var(--tw-scale-y,1))'}; });
+        rv.forEach(function(v) { ryu['.rotate-y-'+v] = {'--tw-rotate-y': v+'deg', transform: 'translate3d(var(--tw-translate-x,0),var(--tw-translate-y,0),var(--tw-translate-z,0)) rotateX(var(--tw-rotate-x,0)) rotateY(var(--tw-rotate-y,0)) rotateZ(var(--tw-rotate-z,0)) skewX(var(--tw-skew-x,0)) skewY(var(--tw-skew-y,0)) scaleX(var(--tw-scale-x,1)) scaleY(var(--tw-scale-y,1))'}; });
+        addUtilities({...ru,...ryu, '.perspective-none':{perspective:'none'},'.perspective-dramatic':{perspective:'100px'},'.perspective-near':{perspective:'300px'},'.perspective-normal':{perspective:'500px'},'.perspective-midrange':{perspective:'800px'},'.perspective-distant':{perspective:'1200px'},'.perspective-1000':{perspective:'1000px'},'.transform-style-preserve-3d':{'transform-style':'preserve-3d'},'.transform-style-flat':{'transform-style':'flat'}});
+    }]
+};
+</script></head>
+<body class="bg-[#fdfdfc] text-neutral-900 antialiased selection:bg-neutral-900 selection:text-white cursor-none">
+
+    <canvas id="cursor-canvas" class="fixed inset-0 z-[9999] pointer-events-none"></canvas>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center px-6 py-4 md:px-12 md:py-6 w-full max-w-[1800px] mx-auto bg-[#fdfdfc]/80 backdrop-blur-md transition-all duration-300 border-b border-transparent" id="navbar">
+        <a href="index.html" class="cursor-pointer hover:opacity-70 transition-opacity">
+            <img src="pmw-logo.png" alt="PMW" class="h-[84px] md:h-[96px]" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <span class="text-xl font-semibold tracking-tight hidden">PMW</span>
+        </a>
+        <div class="hidden md:flex gap-8 text-sm font-medium text-neutral-600">
+            <a href="index.html#hizmetler" class="hover:text-black transition-colors" data-i18n="nav.services">Hizmetler</a>
+            <a href="projeler.html" class="text-black hover:text-black transition-colors" data-i18n="nav.projects">Projelerimiz</a>
+            <a href="index.html#surec" class="hover:text-black transition-colors" data-i18n="nav.process">S&#252;re&#231;ler</a>
+            <a href="index.html#iletisim" class="hover:text-black transition-colors" data-i18n="nav.contact">&#304;leti&#351;im</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button id="lang-toggle" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-neutral-200 text-xs font-semibold text-neutral-600 hover:bg-neutral-100 transition-colors cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                <span id="lang-label">EN</span>
+            </button>
+            <a href="index.html#iletisim" class="hidden md:block px-5 py-2.5 bg-neutral-900 text-white rounded-full text-xs font-semibold hover:bg-neutral-700 hover:scale-105 transition-all duration-300 shadow-lg shadow-neutral-200/50" data-i18n="nav.cta">PMW ile Tan&#305;&#351;&#305;n</a>
+            <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center rounded-full border border-neutral-200 hover:bg-neutral-100 transition-colors" aria-label="Men&#252;">
+                <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="hidden"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+            </button>
+        </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-[#fdfdfc]/95 backdrop-blur-xl flex flex-col items-center justify-center gap-8 translate-y-full transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:hidden">
+        <a href="index.html#hizmetler" class="mobile-menu-link text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.services">Hizmetler</a>
+        <a href="projeler.html" class="text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.projects">Projelerimiz</a>
+        <a href="index.html#surec" class="mobile-menu-link text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.process">S&#252;re&#231;ler</a>
+        <a href="index.html#iletisim" class="mobile-menu-link text-3xl font-semibold tracking-tight text-neutral-900 hover:text-neutral-500 transition-colors" data-i18n="nav.contact">&#304;leti&#351;im</a>
+        <button id="mobile-lang-toggle" class="flex items-center gap-1.5 px-4 py-2 rounded-full border border-neutral-200 text-sm font-semibold text-neutral-600 hover:bg-neutral-100 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+            <span id="mobile-lang-label">EN</span>
+        </button>
+        <a href="index.html#iletisim" class="mobile-menu-link mt-2 px-8 py-3.5 bg-neutral-900 text-white rounded-full text-sm font-semibold hover:bg-neutral-700 transition-colors" data-i18n="nav.cta">PMW ile Tan&#305;&#351;&#305;n</a>
+    </div>
+
+    <main class="md:px-8 w-full max-w-[1800px] mt-24 mr-auto ml-auto pr-4 pb-20 pl-4">
+        <section class="pt-10 md:pt-20 pb-12 relative">
+            <div class="max-w-4xl reveal">
+                <a href="projeler.html" class="inline-flex items-center gap-2 text-sm font-medium text-neutral-500 hover:text-black transition-colors mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+                    <span data-i18n="back">T&#252;m Projeler</span>
+                </a>
+                <div class="flex items-center gap-3 mb-4"><span class="px-3 py-1 bg-neutral-900 text-white text-xs font-semibold rounded-full" id="project-badge"></span></div>
+                <h1 class="md:text-7xl lg:text-8xl leading-[1.05] text-5xl font-semibold tracking-tighter mb-6" id="project-title"></h1>
+                <p class="text-lg md:text-xl text-neutral-600 max-w-2xl font-medium leading-relaxed" id="project-desc"></p>
+            </div>
+        </section>
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent my-12 opacity-50"></div>
+        <section class="mb-20 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-6" data-i18n="overview.title">Proje Hakk&#305;nda</h2>
+                    <p class="text-neutral-600 leading-relaxed mb-4" id="project-overview-p1"></p>
+                    <p class="text-neutral-600 leading-relaxed" id="project-overview-p2"></p>
+                </div>
+                <div class="flex flex-col gap-6">
+                    <div class="grid grid-cols-2 gap-4" id="project-stats"></div>
+                    <div class="mt-4" id="project-tags"></div>
+                </div>
+            </div>
+        </section>
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent my-12 opacity-50"></div>
+        <section class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-12 reveal" data-i18n="features.title">&#214;zellikler &amp; Kapsam</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="project-features"></div>
+        </section>
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-neutral-200 to-transparent my-12 opacity-50"></div>
+        <section class="mb-20">
+            <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-12 reveal" data-i18n="process.title">Proje S&#252;reci</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" id="project-process"></div>
+        </section>
+        <section class="mb-20">
+            <div class="relative w-full rounded-[2.5rem] bg-[#111111] overflow-hidden px-8 py-20 md:py-32 text-center reveal">
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-neutral-800/30 rounded-full blur-[120px] pointer-events-none"></div>
+                <div class="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+                    <h2 class="text-5xl md:text-7xl lg:text-8xl font-semibold text-white tracking-tighter leading-none mb-8" data-i18n="cta.title" data-i18n-html="true">Benzer Bir Proje<br>Ba&#351;latal&#305;m.</h2>
+                    <p class="text-neutral-400 text-lg md:text-xl mb-10 max-w-lg leading-relaxed" data-i18n="cta.desc">Bu projeye benzer bir &#231;al&#305;&#351;ma i&#231;in bizimle ileti&#351;ime ge&#231;in.</p>
+                    <div class="flex flex-col md:flex-row items-center gap-4 w-full justify-center">
+                        <a href="index.html#iletisim" class="px-10 py-4 bg-white text-black rounded-full text-base font-bold hover:bg-neutral-200 hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.15)] min-w-[200px] text-center" data-i18n="cta.quote">Teklif Al&#305;n</a>
+                        <a href="index.html#iletisim" class="px-10 py-4 bg-transparent border border-neutral-700 text-white rounded-full text-base font-semibold hover:border-white transition-all duration-300 min-w-[200px] text-center" data-i18n="cta.contact">Bize Ula&#351;&#305;n</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="w-full h-px bg-neutral-200 my-12"></div>
+        <section class="mt-20 overflow-hidden border-t border-black pt-12 relative">
+            <div class="w-full overflow-hidden py-10">
+                <h1 class="text-[15vw] leading-[0.8] uppercase whitespace-nowrap select-none transition-transform duration-75 will-change-transform font-bold text-black tracking-tighter translate-x-0" style="transform: translateX(0px)" id="footer-text">PMW Global Brand Systems</h1>
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mt-8 gap-6 pb-12 reveal">
+                <div class="flex gap-4">
+                    <a href="#" class="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center border border-neutral-200 hover:bg-black hover:text-white hover:border-black transition-all duration-300" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg></a>
+                    <a href="#" class="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center border border-neutral-200 hover:bg-black hover:text-white hover:border-black transition-all duration-300" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+                    <a href="#" class="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center border border-neutral-200 hover:bg-black hover:text-white hover:border-black transition-all duration-300" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                </div>
+                <div class="flex flex-wrap gap-8 text-sm font-medium text-neutral-500">
+                    <a href="gizlilik.html" class="hover:text-black relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-all" data-i18n="footer.privacy">Gizlilik Politikas&#305;</a>
+                    <a href="kullanim-kosullari.html" class="hover:text-black relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-all" data-i18n="footer.terms">Kullan&#305;m Ko&#351;ullar&#305;</a>
+                    <a href="kariyer.html" class="hover:text-black relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-black hover:after:w-full after:transition-all" data-i18n="footer.careers">Kariyer</a>
+                </div>
+                <div class="text-sm font-medium text-neutral-400" data-i18n="footer.copy">&copy; 2026 PMW. T&#252;m haklar&#305; sakl&#305;d&#305;r.</div>
+            </div>
+        </section>
+    </main>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 z-50 w-12 h-12 bg-neutral-900 text-white rounded-full flex items-center justify-center shadow-lg shadow-neutral-900/20 hover:bg-neutral-700 hover:scale-110 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <script src="proje-detay-data.js"></script>
+    <script>
+        var params = new URLSearchParams(window.location.search);
+        var projectId = params.get('id') || 'cms1';
+        var project = projects[projectId];
+        if (!project) { window.location.href = 'projeler.html'; }
+
+        var currentLang = localStorage.getItem('pmw-lang') || 'tr';
+        var translations = staticTranslations;
+
+        function getBadge(lang) {
+            if (typeof project.badge === 'string') return project.badge;
+            return project.badge[lang] || project.badge.tr;
+        }
+
+        function renderProject(lang) {
+            var d = project[lang] || project.tr;
+            document.title = 'PMW \u2013 ' + d.title;
+            document.getElementById('project-badge').textContent = getBadge(lang);
+            document.getElementById('project-title').textContent = d.title;
+            document.getElementById('project-desc').textContent = d.desc;
+            document.getElementById('project-overview-p1').textContent = d.overview1;
+            document.getElementById('project-overview-p2').textContent = d.overview2;
+
+            // Stats - built using DOM methods for safety
+            var statsEl = document.getElementById('project-stats');
+            statsEl.textContent = '';
+            d.stats.forEach(function(s) {
+                var div = document.createElement('div');
+                div.className = 'bg-neutral-50 rounded-2xl p-6 border border-neutral-100';
+                var valDiv = document.createElement('div');
+                valDiv.className = 'text-2xl md:text-3xl font-bold tracking-tight mb-1';
+                valDiv.textContent = s.val;
+                var labelDiv = document.createElement('div');
+                labelDiv.className = 'text-sm text-neutral-500';
+                labelDiv.textContent = s.label;
+                div.appendChild(valDiv);
+                div.appendChild(labelDiv);
+                statsEl.appendChild(div);
+            });
+
+            // Tags
+            var tagsEl = document.getElementById('project-tags');
+            tagsEl.textContent = '';
+            var tagsLabel = document.createElement('div');
+            tagsLabel.className = 'text-xs font-semibold text-neutral-400 uppercase tracking-widest mb-3';
+            tagsLabel.textContent = translations[lang]['techStack'] || 'Tech Stack';
+            tagsEl.appendChild(tagsLabel);
+            var tagsWrap = document.createElement('div');
+            tagsWrap.className = 'flex flex-wrap gap-2';
+            d.tags.forEach(function(t) {
+                var span = document.createElement('span');
+                span.className = 'px-3 py-1.5 bg-neutral-100 rounded-full text-xs font-medium text-neutral-600';
+                span.textContent = t;
+                tagsWrap.appendChild(span);
+            });
+            tagsEl.appendChild(tagsWrap);
+
+            // Features
+            var featEl = document.getElementById('project-features');
+            featEl.textContent = '';
+            d.features.forEach(function(f, i) {
+                var card = document.createElement('div');
+                card.className = 'bg-white rounded-2xl border border-neutral-200 p-8 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 reveal delay-' + (i % 3 * 100);
+                var icon = document.createElement('div');
+                icon.className = 'w-10 h-10 bg-neutral-900 rounded-xl flex items-center justify-center mb-4';
+                var iconSpan = document.createElement('span');
+                iconSpan.className = 'text-white text-sm font-bold';
+                iconSpan.textContent = '0' + (i+1);
+                icon.appendChild(iconSpan);
+                var h3 = document.createElement('h3');
+                h3.className = 'text-lg font-semibold tracking-tight mb-2';
+                h3.textContent = f.t;
+                var p = document.createElement('p');
+                p.className = 'text-sm text-neutral-500 leading-relaxed';
+                p.textContent = f.d;
+                card.appendChild(icon);
+                card.appendChild(h3);
+                card.appendChild(p);
+                featEl.appendChild(card);
+            });
+
+            // Process
+            var procEl = document.getElementById('project-process');
+            procEl.textContent = '';
+            d.process.forEach(function(pr, i) {
+                var div = document.createElement('div');
+                div.className = 'reveal delay-' + (i * 100);
+                var num = document.createElement('div');
+                num.className = 'text-6xl md:text-7xl font-bold text-neutral-100 mb-4';
+                num.textContent = '0' + (i+1);
+                var h3 = document.createElement('h3');
+                h3.className = 'text-xl font-semibold tracking-tight mb-2';
+                h3.textContent = pr.t;
+                var p = document.createElement('p');
+                p.className = 'text-sm text-neutral-500 leading-relaxed';
+                p.textContent = pr.d;
+                div.appendChild(num);
+                div.appendChild(h3);
+                div.appendChild(p);
+                procEl.appendChild(div);
+            });
+
+            document.querySelectorAll('.reveal:not(.active)').forEach(function(el) { revealObserver.observe(el); });
+        }
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('pmw-lang', lang);
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(function(el) {
+                var key = el.getAttribute('data-i18n');
+                var val = translations[lang] ? translations[lang][key] : null;
+                if (!val) return;
+                // Safe: only static trusted translation strings (e.g. "Contact Us<br>...") are rendered as HTML, never user input
+                if (el.getAttribute('data-i18n-html') === 'true') { el.innerHTML = val; } else { el.textContent = val; }
+            });
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+                var key = el.getAttribute('data-i18n-placeholder');
+                var val = translations[lang] ? translations[lang][key] : null;
+                if (val) el.placeholder = val;
+            });
+            var label = lang === 'tr' ? 'EN' : 'TR';
+            var ll = document.getElementById('lang-label'); var ml = document.getElementById('mobile-lang-label');
+            if (ll) ll.textContent = label; if (ml) ml.textContent = label;
+            renderProject(lang);
+        }
+
+        // Mobile menu
+        var mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        var mobileMenu = document.getElementById('mobile-menu');
+        var menuIconOpen = document.getElementById('menu-icon-open');
+        var menuIconClose = document.getElementById('menu-icon-close');
+        var menuOpen = false;
+        mobileMenuBtn.addEventListener('click', function() {
+            menuOpen = !menuOpen;
+            mobileMenu.classList.toggle('translate-y-full', !menuOpen);
+            mobileMenu.classList.toggle('translate-y-0', menuOpen);
+            menuIconOpen.classList.toggle('hidden', menuOpen);
+            menuIconClose.classList.toggle('hidden', !menuOpen);
+        });
+        document.querySelectorAll('.mobile-menu-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                menuOpen = false; mobileMenu.classList.add('translate-y-full'); mobileMenu.classList.remove('translate-y-0');
+                menuIconOpen.classList.remove('hidden'); menuIconClose.classList.add('hidden');
+            });
+        });
+
+        var revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+
+        var footerText = document.getElementById('footer-text');
+        var navbar = document.getElementById('navbar');
+        var backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', function() {
+            var scrollY = window.scrollY;
+            if (scrollY > 50) { navbar.classList.add('shadow-sm', 'bg-[#fdfdfc]/90'); } else { navbar.classList.remove('shadow-sm', 'bg-[#fdfdfc]/90'); }
+            if (footerText) { var fp = footerText.getBoundingClientRect().top; if (fp < window.innerHeight) footerText.style.transform = 'translateX(-' + ((window.innerHeight - fp) * 0.1) + 'px)'; }
+            if (scrollY > 500) { backToTop.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none'); backToTop.classList.add('opacity-100', 'translate-y-0'); }
+            else { backToTop.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none'); backToTop.classList.remove('opacity-100', 'translate-y-0'); }
+        });
+        window.addEventListener('load', function() { document.querySelectorAll('.reveal').forEach(function(el, i) { if (el.getBoundingClientRect().top < window.innerHeight) setTimeout(function() { el.classList.add('active'); }, i * 100); }); });
+        backToTop.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+
+        var lt = document.getElementById('lang-toggle'); if (lt) lt.addEventListener('click', function() { setLanguage(currentLang === 'tr' ? 'en' : 'tr'); });
+        var mlt = document.getElementById('mobile-lang-toggle'); if (mlt) mlt.addEventListener('click', function() { setLanguage(currentLang === 'tr' ? 'en' : 'tr'); });
+
+        setLanguage(currentLang);
+
+        (function(){var hh=window.matchMedia('(hover: hover)').matches;var pr=window.matchMedia('(prefers-reduced-motion: reduce)').matches;var cc=document.getElementById('cursor-canvas');if(!hh||pr){cc.style.display='none';document.body.style.cursor='auto';return;}var ctx=cc.getContext('2d');var moved=false;var ptr={x:.5*window.innerWidth,y:.5*window.innerHeight};var params={pointsNumber:40,widthFactor:.3,spring:.4,friction:.5};var trail=new Array(params.pointsNumber);for(var i=0;i<params.pointsNumber;i++)trail[i]={x:ptr.x,y:ptr.y,dx:0,dy:0};function up(x,y){ptr.x=x;ptr.y=y;}window.addEventListener('mousemove',function(e){moved=true;up(e.clientX,e.clientY);});window.addEventListener('click',function(e){up(e.clientX,e.clientY);});window.addEventListener('touchmove',function(e){moved=true;up(e.targetTouches[0].clientX,e.targetTouches[0].clientY);});function setup(){cc.width=window.innerWidth;cc.height=window.innerHeight;}function update(t){if(!moved){ptr.x=(.5+.3*Math.cos(.002*t)*Math.sin(.005*t))*window.innerWidth;ptr.y=(.5+.2*Math.cos(.005*t)+.1*Math.cos(.01*t))*window.innerHeight;}ctx.clearRect(0,0,cc.width,cc.height);trail.forEach(function(p,pi){var prev=pi===0?ptr:trail[pi-1];var sp=pi===0?.4*params.spring:params.spring;p.dx+=(prev.x-p.x)*sp;p.dy+=(prev.y-p.y)*sp;p.dx*=params.friction;p.dy*=params.friction;p.x+=p.dx;p.y+=p.dy;});ctx.lineCap='round';ctx.strokeStyle='#111111';ctx.beginPath();ctx.moveTo(trail[0].x,trail[0].y);for(var i=1;i<trail.length-1;i++){var xc=.5*(trail[i].x+trail[i+1].x);var yc=.5*(trail[i].y+trail[i+1].y);ctx.quadraticCurveTo(trail[i].x,trail[i].y,xc,yc);ctx.lineWidth=params.widthFactor*(params.pointsNumber-i);ctx.stroke();}ctx.lineTo(trail[trail.length-1].x,trail[trail.length-1].y);ctx.stroke();window.requestAnimationFrame(update);}setup();update(0);window.addEventListener('resize',setup);})();
+    </script>
+</body></html>
