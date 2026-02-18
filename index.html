@@ -57,6 +57,25 @@ transform: translateY(0);
   body { cursor: auto !important; }
   #cursor-canvas { display: none !important; }
 }
+.card-expandable { cursor: pointer; }
+.card-expand-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, margin 0.4s ease;
+  margin-top: 0;
+}
+.card-expandable.expanded .card-expand-content {
+  max-height: 500px;
+  opacity: 1;
+  margin-top: 1.5rem;
+}
+.card-expand-icon {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-expandable.expanded .card-expand-icon {
+  transform: rotate(45deg);
+}
 </style>
 <script>
 tailwind.config = {
@@ -283,33 +302,74 @@ addUtilities({
                 <h2 class="md:text-5xl lg:text-6xl leading-tight text-balance text-4xl font-semibold tracking-tighter" data-i18n="infra.title">Our Core Infrastructure Layers</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="reveal delay-100 bg-neutral-50 rounded-3xl p-8 flex flex-col min-h-[360px] hover:bg-neutral-100 transition-colors duration-300 border border-neutral-200">
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="text-sm font-mono text-neutral-400">01</span>
-                        <div class="w-2 h-2 rounded-full bg-neutral-900"></div>
+                <div class="card-expandable reveal delay-100 bg-neutral-50 rounded-3xl p-8 flex flex-col min-h-[360px] hover:bg-neutral-100 transition-colors duration-300 border border-neutral-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm font-mono text-neutral-400">01</span>
+                            <div class="w-2 h-2 rounded-full bg-neutral-900"></div>
+                        </div>
+                        <div class="card-expand-icon w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+                        </div>
                     </div>
                     <h3 class="text-2xl md:text-3xl font-semibold text-black tracking-tighter mb-4 mt-auto" data-i18n="infra.item1title">Licensed &amp; Brand Ecosystems</h3>
                     <p class="text-sm text-neutral-500 leading-relaxed" data-i18n="infra.item1desc">End-to-end merchandise lifecycle management — from licensing strategy and product design to production, distribution, and retail placement. We build brand-aligned product ecosystems across sport, fashion, and institutional verticals.</p>
+                    <div class="card-expand-content">
+                        <div class="border-t border-neutral-200 pt-4">
+                            <ul class="space-y-3 text-sm text-neutral-600">
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="infra.item1exp1">Licensing strategy & rights management</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="infra.item1exp2">Product design & collection development</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="infra.item1exp3">Manufacturing & quality assurance</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="infra.item1exp4">Distribution & retail placement</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="reveal delay-200 bg-neutral-50 rounded-3xl p-8 flex flex-col min-h-[360px] hover:bg-neutral-100 transition-colors duration-300 border border-neutral-200">
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="text-sm font-mono text-neutral-400">02</span>
-                        <div class="w-2 h-2 rounded-full bg-neutral-900"></div>
+                <div class="card-expandable reveal delay-200 bg-neutral-50 rounded-3xl p-8 flex flex-col min-h-[360px] hover:bg-neutral-100 transition-colors duration-300 border border-neutral-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm font-mono text-neutral-400">02</span>
+                            <div class="w-2 h-2 rounded-full bg-neutral-900"></div>
+                        </div>
+                        <div class="card-expand-icon w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+                        </div>
                     </div>
                     <h3 class="text-2xl md:text-3xl font-semibold text-black tracking-tighter mb-4 mt-auto" data-i18n="infra.item2title">Retail &amp; Experience Systems</h3>
                     <p class="text-sm text-neutral-500 leading-relaxed" data-i18n="infra.item2desc">Concept-to-shelf retail infrastructure including pop-up activations, permanent retail environments, and experience-driven brand spaces. We design physical and hybrid retail systems that connect product, space, and audience.</p>
+                    <div class="card-expand-content">
+                        <div class="border-t border-neutral-200 pt-4">
+                            <ul class="space-y-3 text-sm text-neutral-600">
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="infra.item2exp1">Pop-up & temporary retail activations</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="infra.item2exp2">Permanent retail environment design</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="infra.item2exp3">Experience-driven brand spaces</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="infra.item2exp4">Hybrid physical-digital retail systems</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="reveal delay-300 bg-neutral-50 rounded-3xl p-8 flex flex-col min-h-[360px] hover:bg-neutral-100 transition-colors duration-300 border border-neutral-200">
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="text-sm font-mono text-neutral-400">03</span>
-                        <div class="w-2 h-2 rounded-full bg-neutral-900"></div>
+                <div class="card-expandable reveal delay-300 bg-neutral-50 rounded-3xl p-8 flex flex-col min-h-[360px] hover:bg-neutral-100 transition-colors duration-300 border border-neutral-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm font-mono text-neutral-400">03</span>
+                            <div class="w-2 h-2 rounded-full bg-neutral-900"></div>
+                        </div>
+                        <div class="card-expand-icon w-8 h-8 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+                        </div>
                     </div>
                     <h3 class="text-2xl md:text-3xl font-semibold text-black tracking-tighter mb-4 mt-auto" data-i18n="infra.item3title">PMW Digital Infrastructure Unit</h3>
-                    <p class="text-sm text-neutral-500 leading-relaxed mb-6" data-i18n="infra.item3desc">Proprietary digital systems for brand management, product tracking, and operational intelligence. Includes secure web platforms, internal dashboards, and IP-protected digital architecture.</p>
-                    <a href="#" class="text-sm font-semibold text-neutral-900 hover:text-neutral-600 transition-colors flex items-center gap-2 mt-auto" data-i18n="infra.item3cta">
-                        Explore Digital Infrastructure
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                    </a>
+                    <p class="text-sm text-neutral-500 leading-relaxed" data-i18n="infra.item3desc">Proprietary digital systems for brand management, product tracking, and operational intelligence. Includes secure web platforms, internal dashboards, and IP-protected digital architecture.</p>
+                    <div class="card-expand-content">
+                        <div class="border-t border-neutral-200 pt-4">
+                            <ul class="space-y-3 text-sm text-neutral-600">
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="infra.item3exp1">Secure web platforms & e-commerce</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="infra.item3exp2">Internal dashboards & analytics</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="infra.item3exp3">IP-protected digital architecture</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="infra.item3exp4">Product tracking & operational intelligence</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -386,20 +446,62 @@ addUtilities({
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <div class="relative bg-[#a5b4fc] rounded-3xl p-8 flex flex-col min-h-[320px] hover:scale-[1.01] transition-transform duration-300">
-                    <div class="flex items-center gap-2 mb-2"><div class="w-2 h-2 rounded-full bg-black"></div><span class="text-sm font-medium text-neutral-800" data-i18n="model.step1label">Layer 01</span></div>
+                <div class="card-expandable relative bg-[#a5b4fc] rounded-3xl p-8 flex flex-col min-h-[320px] hover:scale-[1.01] transition-transform duration-300">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-black"></div><span class="text-sm font-medium text-neutral-800" data-i18n="model.step1label">Layer 01</span></div>
+                        <div class="card-expand-icon w-7 h-7 rounded-full border border-black/20 flex items-center justify-center text-black/50">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+                        </div>
+                    </div>
                     <h3 class="text-2xl md:text-3xl font-semibold text-black tracking-tighter mb-3 mt-auto" data-i18n="model.step1title">Creative &amp; Curation Layer</h3>
                     <p class="text-sm text-neutral-700 leading-relaxed" data-i18n="model.step1desc">Brand strategy, product design, creative direction, and curation across licensed and original collections.</p>
+                    <div class="card-expand-content">
+                        <div class="border-t border-black/10 pt-4">
+                            <ul class="space-y-3 text-sm text-neutral-800">
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-black/30 mt-1.5 shrink-0"></div><span data-i18n="model.step1exp1">Brand identity & visual systems</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-black/30 mt-1.5 shrink-0"></div><span data-i18n="model.step1exp2">Collection curation & seasonal planning</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-black/30 mt-1.5 shrink-0"></div><span data-i18n="model.step1exp3">Art direction & campaign creative</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-neutral-50 rounded-3xl p-8 flex flex-col min-h-[320px] hover:bg-neutral-100 transition-colors duration-300">
-                    <div class="flex items-center gap-2 mb-2"><div class="w-2 h-2 rounded-full border border-neutral-400"></div><span class="text-sm font-medium text-neutral-600" data-i18n="model.step2label">Layer 02</span></div>
+                <div class="card-expandable bg-neutral-50 rounded-3xl p-8 flex flex-col min-h-[320px] hover:bg-neutral-100 transition-colors duration-300">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full border border-neutral-400"></div><span class="text-sm font-medium text-neutral-600" data-i18n="model.step2label">Layer 02</span></div>
+                        <div class="card-expand-icon w-7 h-7 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+                        </div>
+                    </div>
                     <h3 class="text-2xl md:text-3xl font-semibold text-black tracking-tighter mb-3 mt-auto" data-i18n="model.step2title">Production &amp; Retail Infrastructure</h3>
                     <p class="text-sm text-neutral-500 leading-relaxed" data-i18n="model.step2desc">Manufacturing coordination, quality assurance, logistics, and multi-channel retail deployment — from e-commerce to physical retail.</p>
+                    <div class="card-expand-content">
+                        <div class="border-t border-neutral-200 pt-4">
+                            <ul class="space-y-3 text-sm text-neutral-600">
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="model.step2exp1">Supplier management & production coordination</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="model.step2exp2">Quality control & compliance</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="model.step2exp3">Logistics, warehousing & fulfillment</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-neutral-50 rounded-3xl p-8 flex flex-col min-h-[320px] hover:bg-neutral-100 transition-colors duration-300">
-                    <div class="flex items-center gap-2 mb-2"><div class="w-2 h-2 rounded-full border border-neutral-400"></div><span class="text-sm font-medium text-neutral-600" data-i18n="model.step3label">Layer 03</span></div>
+                <div class="card-expandable bg-neutral-50 rounded-3xl p-8 flex flex-col min-h-[320px] hover:bg-neutral-100 transition-colors duration-300">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full border border-neutral-400"></div><span class="text-sm font-medium text-neutral-600" data-i18n="model.step3label">Layer 03</span></div>
+                        <div class="card-expand-icon w-7 h-7 rounded-full border border-neutral-300 flex items-center justify-center text-neutral-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"></path><path d="M5 12h14"></path></svg>
+                        </div>
+                    </div>
                     <h3 class="text-2xl md:text-3xl font-semibold text-black tracking-tighter mb-3 mt-auto" data-i18n="model.step3title">Digital &amp; IP Systems</h3>
                     <p class="text-sm text-neutral-500 leading-relaxed" data-i18n="model.step3desc">Proprietary digital platforms, brand management tools, operational dashboards, and IP-protected infrastructure development.</p>
+                    <div class="card-expand-content">
+                        <div class="border-t border-neutral-200 pt-4">
+                            <ul class="space-y-3 text-sm text-neutral-600">
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="model.step3exp1">Custom web & e-commerce platforms</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="model.step3exp2">Operational dashboards & reporting</span></li>
+                                <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 rounded-full bg-neutral-400 mt-1.5 shrink-0"></div><span data-i18n="model.step3exp3">IP protection & digital rights management</span></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -589,6 +691,13 @@ addUtilities({
 
         backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
+        document.querySelectorAll('.card-expandable').forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (e.target.closest('a')) return;
+                card.classList.toggle('expanded');
+            });
+        });
+
         const contactForm = document.getElementById('contact-form');
         const formSuccess = document.getElementById('form-success');
         function showError(input, msg) { input.classList.add('border-red-500'); input.classList.remove('border-neutral-300'); const err = input.parentElement.querySelector('.form-error'); if (err) { err.textContent = msg; err.classList.remove('hidden'); } }
@@ -611,9 +720,9 @@ addUtilities({
                 'hero.title':'Integrated Brand<br>Infrastructure for<br>Sport, Fashion<br>&amp; Institutions','hero.subtitle':'PMW designs and operates licensed merchandise ecosystems, curated retail systems, and secure digital infrastructure through a unified operational model.','hero.tagline':'Creative at heart. Operational by design. Engineered for scale.','hero.cta':'Explore Our Work','hero.cta2':'Contact Us',
                 'card.label':'Active Project','card.title':'Licensed Collection Launch','card.status':'In Production','card.delivery':'Delivery: 2 weeks','card.progress':'Progress',
                 'platform.title':'Centralized<br>Execution Model','platform.desc':'PMW integrates creative, production, and digital workflows into a centralized execution model.','platform.quote':'We operate as a system integrator, not a supplier.','platform.tab1':'Creative','platform.tab2':'Production','platform.tab3':'Digital','platform.status':'System Status','platform.season':'2026 Season','platform.completed':'Completed Projects','platform.explore':'Explore Infrastructure',
-                'infra.label':'Infrastructure','infra.title':'Our Core Infrastructure Layers','infra.item1title':'Licensed & Brand Ecosystems','infra.item1desc':'End-to-end merchandise lifecycle management — from licensing strategy and product design to production, distribution, and retail placement. We build brand-aligned product ecosystems across sport, fashion, and institutional verticals.','infra.item2title':'Retail & Experience Systems','infra.item2desc':'Concept-to-shelf retail infrastructure including pop-up activations, permanent retail environments, and experience-driven brand spaces. We design physical and hybrid retail systems that connect product, space, and audience.','infra.item3title':'PMW Digital Infrastructure Unit','infra.item3desc':'Proprietary digital systems for brand management, product tracking, and operational intelligence. Includes secure web platforms, internal dashboards, and IP-protected digital architecture.','infra.item3cta':'Explore Digital Infrastructure',
+                'infra.label':'Infrastructure','infra.title':'Our Core Infrastructure Layers','infra.item1title':'Licensed & Brand Ecosystems','infra.item1desc':'End-to-end merchandise lifecycle management — from licensing strategy and product design to production, distribution, and retail placement. We build brand-aligned product ecosystems across sport, fashion, and institutional verticals.','infra.item1exp1':'Licensing strategy & rights management','infra.item1exp2':'Product design & collection development','infra.item1exp3':'Manufacturing & quality assurance','infra.item1exp4':'Distribution & retail placement','infra.item2title':'Retail & Experience Systems','infra.item2desc':'Concept-to-shelf retail infrastructure including pop-up activations, permanent retail environments, and experience-driven brand spaces. We design physical and hybrid retail systems that connect product, space, and audience.','infra.item2exp1':'Pop-up & temporary retail activations','infra.item2exp2':'Permanent retail environment design','infra.item2exp3':'Experience-driven brand spaces','infra.item2exp4':'Hybrid physical-digital retail systems','infra.item3title':'PMW Digital Infrastructure Unit','infra.item3desc':'Proprietary digital systems for brand management, product tracking, and operational intelligence. Includes secure web platforms, internal dashboards, and IP-protected digital architecture.','infra.item3exp1':'Secure web platforms & e-commerce','infra.item3exp2':'Internal dashboards & analytics','infra.item3exp3':'IP-protected digital architecture','infra.item3exp4':'Product tracking & operational intelligence',
                 'engagement.label':'Case Study','engagement.title':'Featured Strategic Engagement','engagement.client':'Turkish Football Federation (TFF)','engagement.desc':'PMW operates as the licensed merchandise and brand systems partner for TFF — managing the full product lifecycle from concept to shelf across national team and institutional verticals.','engagement.point1':'35+ SKUs designed, produced, and distributed under official TFF license','engagement.point2':'Seasonal drop architecture aligned with national team calendar and tournament cycles','engagement.point3':'EURO 2024 capsule collection — designed, produced, and launched within PMW infrastructure','engagement.point4':'Multi-channel distribution: e-commerce, stadium retail, wholesale, and institutional gifting','engagement.point5':'Retail expansion roadmap including branded pop-ups and permanent retail concepts','engagement.metric':'Licensed SKUs Designed & Distributed','engagement.capsule':'Capsule Collection','engagement.channels':'Distribution Channels',
-                'model.label':'Operating Model','model.title':'Our Operating Model','model.step1label':'Layer 01','model.step1title':'Creative & Curation Layer','model.step1desc':'Brand strategy, product design, creative direction, and curation across licensed and original collections.','model.step2label':'Layer 02','model.step2title':'Production & Retail Infrastructure','model.step2desc':'Manufacturing coordination, quality assurance, logistics, and multi-channel retail deployment — from e-commerce to physical retail.','model.step3label':'Layer 03','model.step3title':'Digital & IP Systems','model.step3desc':'Proprietary digital platforms, brand management tools, operational dashboards, and IP-protected infrastructure development.',
+                'model.label':'Operating Model','model.title':'Our Operating Model','model.step1label':'Layer 01','model.step1title':'Creative & Curation Layer','model.step1desc':'Brand strategy, product design, creative direction, and curation across licensed and original collections.','model.step1exp1':'Brand identity & visual systems','model.step1exp2':'Collection curation & seasonal planning','model.step1exp3':'Art direction & campaign creative','model.step2label':'Layer 02','model.step2title':'Production & Retail Infrastructure','model.step2desc':'Manufacturing coordination, quality assurance, logistics, and multi-channel retail deployment — from e-commerce to physical retail.','model.step2exp1':'Supplier management & production coordination','model.step2exp2':'Quality control & compliance','model.step2exp3':'Logistics, warehousing & fulfillment','model.step3label':'Layer 03','model.step3title':'Digital & IP Systems','model.step3desc':'Proprietary digital platforms, brand management tools, operational dashboards, and IP-protected infrastructure development.','model.step3exp1':'Custom web & e-commerce platforms','model.step3exp2':'Operational dashboards & reporting','model.step3exp3':'IP protection & digital rights management',
                 'about.label':'About','about.title':'About PMW','about.desc':'Headquartered in Turkey and operating across the Gulf region, PMW works at the intersection of licensed products, retail infrastructure, and digital systems. We serve federations, fashion labels, and institutional clients through a vertically integrated model — from creative strategy to shelf-ready execution.',
                 'metrics.label':'Key Metrics','metrics.item1':'35+ Licensed SKUs Structured','metrics.item2':'Seasonal Drop Architecture','metrics.item3':'Multi-Channel Distribution Infrastructure','metrics.item4':'Proprietary Digital Systems Developed','metrics.item5':'Cross-Sector Operations (Sport / Fashion / Institutional)',
                 'cta.title':"Let's Build Your<br>Brand Infrastructure.",'cta.desc':'Whether licensed merchandise, curated retail systems, or secure digital architecture — we design integrated models that scale.','cta.contact':'Contact Us',
@@ -625,9 +734,9 @@ addUtilities({
                 'hero.title':'Spor, Moda ve<br>Kurumsal Markalar<br>İçin Entegre<br>Marka Altyapısı','hero.subtitle':'PMW, lisanslı ürün ekosistemleri, küratörlü perakende sistemleri ve güvenli dijital altyapıyı birleşik bir operasyonel model ile tasarlar ve yönetir.','hero.tagline':'Yaratıcılık özünde. Operasyon tasarımında. Ölçek mühendisliğinde.','hero.cta':'Çalışmalarımızı Keşfet','hero.cta2':'Bize Ulaşın',
                 'card.label':'Aktif Proje','card.title':'Lisanslı Koleksiyon Lansmanı','card.status':'Üretimde','card.delivery':'Teslim: 2 hafta','card.progress':'İlerleme',
                 'platform.title':'Merkezi<br>Yürütme Modeli','platform.desc':'PMW, yaratıcı, üretim ve dijital iş akışlarını merkezi bir yürütme modelinde birleştirir.','platform.quote':'Tedarikçi değil, sistem entegratörü olarak çalışıyoruz.','platform.tab1':'Yaratıcı','platform.tab2':'Üretim','platform.tab3':'Dijital','platform.status':'Sistem Durumu','platform.season':'2026 Sezonu','platform.completed':'Tamamlanan Proje','platform.explore':'Altyapıyı Keşfet',
-                'infra.label':'Altyapı','infra.title':'Temel Altyapı Katmanlarımız','infra.item1title':'Lisanslı & Marka Ekosistemleri','infra.item1desc':'Lisanslama stratejisinden ürün tasarımına, üretimden dağıtım ve perakende yerleşimine kadar uçtan uca ürün yaşam döngüsü yönetimi. Spor, moda ve kurumsal dikeylerde marka uyumlu ürün ekosistemleri inşa ediyoruz.','infra.item2title':'Perakende & Deneyim Sistemleri','infra.item2desc':'Pop-up aktivasyonları, kalıcı perakende ortamları ve deneyim odaklı marka alanları dahil konseptten rafa perakende altyapısı. Ürün, mekan ve kitleyi birleştiren fiziksel ve hibrit perakende sistemleri tasarlıyoruz.','infra.item3title':'PMW Dijital Altyapı Birimi','infra.item3desc':'Marka yönetimi, ürün takibi ve operasyonel istihbarat için tescilli dijital sistemler. Güvenli web platformları, dahili panolar ve fikri mülkiyet korumalı dijital mimari içerir.','infra.item3cta':'Dijital Altyapıyı Keşfet',
+                'infra.label':'Altyapı','infra.title':'Temel Altyapı Katmanlarımız','infra.item1title':'Lisanslı & Marka Ekosistemleri','infra.item1desc':'Lisanslama stratejisinden ürün tasarımına, üretimden dağıtım ve perakende yerleşimine kadar uçtan uca ürün yaşam döngüsü yönetimi. Spor, moda ve kurumsal dikeylerde marka uyumlu ürün ekosistemleri inşa ediyoruz.','infra.item1exp1':'Lisanslama stratejisi & hak yönetimi','infra.item1exp2':'Ürün tasarımı & koleksiyon geliştirme','infra.item1exp3':'Üretim & kalite güvencesi','infra.item1exp4':'Dağıtım & perakende yerleşimi','infra.item2title':'Perakende & Deneyim Sistemleri','infra.item2desc':'Pop-up aktivasyonları, kalıcı perakende ortamları ve deneyim odaklı marka alanları dahil konseptten rafa perakende altyapısı. Ürün, mekan ve kitleyi birleştiren fiziksel ve hibrit perakende sistemleri tasarlıyoruz.','infra.item2exp1':'Pop-up & geçici perakende aktivasyonları','infra.item2exp2':'Kalıcı perakende ortam tasarımı','infra.item2exp3':'Deneyim odaklı marka alanları','infra.item2exp4':'Hibrit fiziksel-dijital perakende sistemleri','infra.item3title':'PMW Dijital Altyapı Birimi','infra.item3desc':'Marka yönetimi, ürün takibi ve operasyonel istihbarat için tescilli dijital sistemler. Güvenli web platformları, dahili panolar ve fikri mülkiyet korumalı dijital mimari içerir.','infra.item3exp1':'Güvenli web platformları & e-ticaret','infra.item3exp2':'Dahili panolar & analitik','infra.item3exp3':'Fikri mülkiyet korumalı dijital mimari','infra.item3exp4':'Ürün takibi & operasyonel istihbarat',
                 'engagement.label':'Vaka Çalışması','engagement.title':'Öne Çıkan Stratejik İş Birliği','engagement.client':'Türkiye Futbol Federasyonu (TFF)','engagement.desc':'PMW, TFF\'nin lisanslı ürün ve marka sistemleri ortağı olarak faaliyet göstermektedir — milli takım ve kurumsal dikeylerde konseptten rafa tüm ürün yaşam döngüsünü yönetmektedir.','engagement.point1':'Resmi TFF lisansı altında 35+ SKU tasarlandı, üretildi ve dağıtıldı','engagement.point2':'Milli takım takvimi ve turnuva döngüleriyle uyumlu sezonluk lansman mimarisi','engagement.point3':'EURO 2024 kapsül koleksiyonu — PMW altyapısında tasarlandı, üretildi ve piyasaya sürüldü','engagement.point4':'Çok kanallı dağıtım: e-ticaret, stadyum perakende, toptan satış ve kurumsal hediye','engagement.point5':'Markalı pop-up\'lar ve kalıcı perakende konseptleri dahil perakende genişleme yol haritası','engagement.metric':'Tasarlanan & Dağıtılan Lisanslı SKU','engagement.capsule':'Kapsül Koleksiyon','engagement.channels':'Dağıtım Kanalı',
-                'model.label':'Operasyon Modeli','model.title':'Operasyon Modelimiz','model.step1label':'Katman 01','model.step1title':'Yaratıcı & Kürasyon Katmanı','model.step1desc':'Lisanslı ve orijinal koleksiyonlarda marka stratejisi, ürün tasarımı, yaratıcı yönetim ve kürasyon.','model.step2label':'Katman 02','model.step2title':'Üretim & Perakende Altyapısı','model.step2desc':'Üretim koordinasyonu, kalite güvencesi, lojistik ve çok kanallı perakende dağıtımı — e-ticaretten fiziksel perakendeye.','model.step3label':'Katman 03','model.step3title':'Dijital & Fikri Mülkiyet Sistemleri','model.step3desc':'Tescilli dijital platformlar, marka yönetim araçları, operasyonel panolar ve fikri mülkiyet korumalı altyapı geliştirme.',
+                'model.label':'Operasyon Modeli','model.title':'Operasyon Modelimiz','model.step1label':'Katman 01','model.step1title':'Yaratıcı & Kürasyon Katmanı','model.step1desc':'Lisanslı ve orijinal koleksiyonlarda marka stratejisi, ürün tasarımı, yaratıcı yönetim ve kürasyon.','model.step1exp1':'Marka kimliği & görsel sistemler','model.step1exp2':'Koleksiyon kürasyonu & sezonluk planlama','model.step1exp3':'Sanat yönetimi & kampanya kreatifi','model.step2label':'Katman 02','model.step2title':'Üretim & Perakende Altyapısı','model.step2desc':'Üretim koordinasyonu, kalite güvencesi, lojistik ve çok kanallı perakende dağıtımı — e-ticaretten fiziksel perakendeye.','model.step2exp1':'Tedarikçi yönetimi & üretim koordinasyonu','model.step2exp2':'Kalite kontrol & uyumluluk','model.step2exp3':'Lojistik, depolama & teslimat','model.step3label':'Katman 03','model.step3title':'Dijital & Fikri Mülkiyet Sistemleri','model.step3desc':'Tescilli dijital platformlar, marka yönetim araçları, operasyonel panolar ve fikri mülkiyet korumalı altyapı geliştirme.','model.step3exp1':'Özel web & e-ticaret platformları','model.step3exp2':'Operasyonel panolar & raporlama','model.step3exp3':'Fikri mülkiyet koruması & dijital hak yönetimi',
                 'about.label':'Hakkımızda','about.title':'PMW Hakkında','about.desc':'Merkezi Türkiye\'de olan ve Körfez bölgesinde faaliyet gösteren PMW, lisanslı ürünler, perakende altyapısı ve dijital sistemlerin kesişim noktasında çalışmaktadır. Federasyonlara, moda markalarına ve kurumsal müşterilere dikey entegre bir modelle hizmet veriyoruz — yaratıcı stratejiden rafa hazır üretime.',
                 'metrics.label':'Temel Metrikler','metrics.item1':'35+ Lisanslı SKU Yapılandırıldı','metrics.item2':'Sezonluk Lansman Mimarisi','metrics.item3':'Çok Kanallı Dağıtım Altyapısı','metrics.item4':'Tescilli Dijital Sistemler Geliştirildi','metrics.item5':'Sektörler Arası Operasyonlar (Spor / Moda / Kurumsal)',
                 'cta.title':'Marka Altyapınızı<br>Birlikte Kuralım.','cta.desc':'Lisanslı ürün, küratörlü perakende sistemi veya güvenli dijital mimari — ölçeklenen entegre modeller tasarlıyoruz.','cta.contact':'Bize Ulaşın',
